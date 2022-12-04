@@ -1,0 +1,35 @@
+.container-popupSettingMessenger
+{
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    top: 0;
+}
+.body-popupSettingMessenger
+{
+    margin-right: 10px;
+    background: var(--blackColorTextDefault);
+    color: var(--blackColorTextDefault) !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.section-textareaEditNameChat
+{
+    width: 100%;
+}
+.section-textareaEditNameChat textarea
+{
+    width: 100%;
+    color: var(--greenColorHot) !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+}
+.section-btnEditNameChat
+{
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

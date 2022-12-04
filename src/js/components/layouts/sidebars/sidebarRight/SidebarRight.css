@@ -1,0 +1,18 @@
+.widgets {
+  position: fixed;
+  right: 0;
+  top: 0;
+  flex: 0.28 1;
+  padding: 25px 50px;
+  border-top: 1px solid rgb(190, 190, 190);
+  padding-top: 60px;
+  max-height: 100vh;
+  overflow-y: auto;
+  }
+
+  @media screen and (max-width: 924px) {
+    .widgets {
+        display: none;
+    }
+}
+  

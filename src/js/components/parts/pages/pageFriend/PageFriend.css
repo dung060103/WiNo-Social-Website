@@ -1,0 +1,13 @@
+.sidebarRight-pageFriend
+{
+    /* position: absolute; */
+}
+.container-pageFriend {
+    /* position: relative;
+    margin: 0 -600px;
+    flex: .8; */
+}
+.body-pageFriend
+{
+    display: flex;
+}

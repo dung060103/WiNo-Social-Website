@@ -1,0 +1,6 @@
+.link-notification
+{
+    color: var(--greenColorHot);
+    display: flex;
+    align-items: center;
+}

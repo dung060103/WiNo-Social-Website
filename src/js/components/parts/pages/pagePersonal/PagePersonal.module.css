@@ -1,0 +1,8 @@
+.container-pagePersonal
+{
+    width: 100%;
+    color: var(--blackColorTextDefault);
+    height: 100%;
+    flex: 1;
+    margin-right: 150px;
+}

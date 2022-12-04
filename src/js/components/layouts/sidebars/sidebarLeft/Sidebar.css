@@ -1,0 +1,13 @@
+.sidebar {
+  padding: 15px 0px;
+  width: max-content;
+  border-radius: 50%;
+  margin-right: 120px;
+}
+
+
+  @media screen and (max-width: 924px) {
+    .sidebar {
+        display: none;
+    }
+}
