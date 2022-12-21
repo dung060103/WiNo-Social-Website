@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Icon_Angle_Right } from "../../../../parts/icons/fontAwesome/FontAwesome";
+import { Icon_Angle_Right, Icon_Sign_Out } from "../../../../parts/icons/fontAwesome/FontAwesome";
 import "../popupAccountHeader/PopupAccountHeader.css";
 import PopUpHeader from "../PopUpHeader";
 import ItemOpt from "../../../../parts/item/itemOpt/ItemOpt";
@@ -26,7 +26,7 @@ var listItemOptAccountHeader = [
     isSummary: true,
   },
   {
-    el_Icon_Label: <i className="fa-solid fa-right-from-bracket"></i>,
+    el_Icon_Label: <Icon_Sign_Out />,
     title_itemOpt: "Sign Out",
     isSummary: false,
     handleClick: async (event,state) => {
@@ -67,8 +67,8 @@ function PopupAccountHeader({
       body={
         <>
           <Link onClick={()=>{
-            dispatch(set_url(`/account/${account.slug_personal}`))
-          }} id="pagePersonal" to={"/account/" + account.slug_personal}>
+            dispatch(set_url(`/account/personal/${account.slug_personal}`))
+          }} id="pagePersonal" to={"/account/personal/" + account.slug_personal}>
             <ItemOpt
               handleClick={(event) => {}}
               component_Left={<LabelCircle urlImg={account.avatar_account} />}

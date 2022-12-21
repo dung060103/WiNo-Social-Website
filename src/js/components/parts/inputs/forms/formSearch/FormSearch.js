@@ -1,6 +1,7 @@
 import React, {useState, useRef} from "react";
 import FormSearchStyles from '../formSearch/FormSearch.module.css'
 import PropTypes from 'prop-types';
+import { Icon_Search } from "../../../icons/fontAwesome/FontAwesome";
  
 FormSearch.propTypes = {
     handler_Search: PropTypes.func
@@ -39,7 +40,7 @@ function FormSearch(props){
     <div className={FormSearchStyles['container-formSearch']}>
       <div className="btn-search__formSearch">
         <div className="icon-search__formSearch">
-          <i className="fa-solid fa-magnifying-glass"></i>
+          <Icon_Search />
         </div>
       </div>
       <div className={FormSearchStyles['container-ipt_search__formSearch']}>
@@ -49,5 +50,12 @@ function FormSearch(props){
       </div>
     </div>
   );
+}
+export function NoResult({})
+{
+  return (<div className="no_result" style={{"display":"flex","justifyContent":"center","flexDirection":"column","alignItems":"center"}}>
+    <h2>No result</h2>
+    <img style={{"width":"100%","objectFit":"cover","padding":"50px"}}src={'https://drive.google.com/uc?export=view&id=191iGIbvR2zE-BYn23xntpeXX7TSqqxay'}></img>
+  </div>)
 }
 export default FormSearch

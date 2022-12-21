@@ -17,11 +17,12 @@ function RestorePass()
       body: JSON.stringify({
         password,
         gmail,}
-      )
+      ),
+      credentials:'include'
     }).then(
       res=>{
         res.text()
-        .then((text=>{if("ok"===JSON.parse(text).status)
+        .then((text=>{if("ok"===JSON.parse(text).mess)
       {
         window.location.href="/CheckCodeEmail"
       }}))
@@ -29,7 +30,7 @@ function RestorePass()
       );
   }
     return(<div className={FormAccount.wrapper}>
-    <img src="https://toptechmakers.com/wp-content/uploads/2022/04/social-media-marketing-services.png" alt=""></img>
+    {/* <img src="https://toptechmakers.com/wp-content/uploads/2022/04/social-media-marketing-services.png" alt=""></img> */}
   <section className={FormAccount.register__form}>
     <LogoWebsite />
     <h1>Hello, welcome back</h1>

@@ -14,7 +14,7 @@ function ListTabPersonalHeader({
     const navigate = useNavigate();
     const [tabActive,setTabActive]= useState(LIST_TAB_HEADER_PERSONAL_DEFAULT.indexOf(value_Context_PagePersonal.slugs[2]));
     const handleClick=(key)=>{
-      dispatch(set_url(`${window.location.href}/${key}`))
+      dispatch(set_url(new Date().toLocaleString()));
       // navigate('/key')
         setTabActive(key) 
     }

@@ -3,11 +3,28 @@
     /* position: absolute; */
 }
 .container-pageFriend {
-    /* position: relative;
-    margin: 0 -600px;
-    flex: .8; */
+    flex: 1;
 }
 .body-pageFriend
 {
     display: flex;
+    height: 680px;
+}
+.sidebarLeft-pageFriend
+{
+    width: 280px;
+    box-shadow: 1px -1px 4px 1px var(--blackColorTextDefault);
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+.sidebarRight-pageFriend
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+    box-shadow: -1px -1px 4px 1px var(--blackColorTextDefault);
+    padding: 20px 40px;
+    margin-right: 40px;
+    border-radius: 4px;
 }

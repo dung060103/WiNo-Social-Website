@@ -3,10 +3,11 @@ import "./Sidebar.css"
 import SidebarRow from "./SidebarRow";
 import {Box, List, ListItem, ListItemButton, ListItemIcon, Switch} from "@mui/material";
 import {AccountBox, Article, Group, ModeNight, Person, Settings, Storefront} from "@mui/icons-material";
+import { useStore } from "../../../../store";
 
 export default function Sidebar({mode,setMode,isShowTittle}) {
     console.log(isShowTittle);
-
+    const [state, dispatch] = useStore()
     return (
       <div className="sidebar">
            <Box flex={1} p={2} sx={{display: {xs: "none", sm: "block"}}}>
@@ -16,8 +17,8 @@ export default function Sidebar({mode,setMode,isShowTittle}) {
                     <ListItem disablePadding>
                         <ListItemButton component='a' href="#">
                             <SidebarRow isShowTittle={isShowTittle} 
-                            src={"https://vivureviews.com/wp-content/uploads/2022/02/among-us-profile-picture.jpg"} 
-                            title={"Among Us"} 
+                            src={state.account.avatar_account} 
+                            title={state.account.user_fname + ' ' + state.account.user_lname} 
                             />
                         </ListItemButton>
                     </ListItem>

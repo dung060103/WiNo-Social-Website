@@ -17,6 +17,12 @@ function Content(
                 </div>)
             })}
         </div>  
+        <div className="container_content-popupCallVideo">
+            {   <div>
+                    {state.popUpCallVideo}
+                </div>
+            }
+        </div>
         <div className="container-popup_Messenger">
             {state.popUpMessengers.map((el,idx)=>{
                 return( <div key={idx}>

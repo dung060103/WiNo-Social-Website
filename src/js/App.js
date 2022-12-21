@@ -24,9 +24,15 @@ import SidebarLeft from "./components/layouts/sidebars/sidebarLeft/Sidebar";
 import Widgets from "./components/layouts/sidebars/sidebarRight/SidebarRight.jsx";
 import Feed from "./components/parts/feed/Feed";
 
+import Home from './components/layouts/home/Home';
+import DetailPost from './components/layouts/home/postStatus/detailPost/DetailPost';
+import PagePersonalHeaderSetting from './components/parts/subHeaders/pagePersonalHeader/pagePersonalHeader_setting/PagePersonalHeaderSetting.jsx'
+
 import {
   add_friend_online,
+  add_popup_call_video,
   delete_friend_online,
+  delete_popup_call_video,
   set_data_account,
   set_io,
   set_url,
@@ -41,6 +47,9 @@ import PageFriend, {
   SidebarFriendResponse,
 } from "./components/parts/pages/pageFriend/PageFriend.js";
 import { LIST_TAB_HEADER_PERSONAL_DEFAULT } from "./store/constants.js";
+import PopUpCallVideo from "./components/layouts/popups/popupCallVideo/PopUpCallVideo.js";
+import ItemOpt from "./components/parts/item/itemOpt/ItemOpt.js";
+import PagePersonalHeader from "./components/parts/subHeaders/pagePersonalHeader/PagePersonalHeader.js";
 function App({ result }) {
   var [state, dispatch] = useStore();
 
@@ -59,7 +68,20 @@ function App({ result }) {
     if (isLoginEd === 200) {
       state.socket.on(`ACCOUNT_${result.account.slug_personal}_UPDATE`,dataAccount_own=>{
         dispatch(set_data_account(dataAccount_own));
+      });
+      // console.log(`${result.account.slug_personal}_HAS_CALL_VIDEO`);
+      state.socketChat.on(`${result.account.slug_personal}_HAS_CALL_VIDEO`,data=>{
+        if(result.account.slug_personal!=data.account_caller.slug_personal)
+        {
+          dispatch(add_popup_call_video(<PopUpCallVideo membersChat={data.box_chat.members} idChat={data.box_chat._id} account_caller={data.account_caller} isResponse={true} avatarCallVideo={data.box_chat.avatar_chat} nameCallVideo={data.box_chat.name_chat}/>));
+        }
+
+        state.socketChat.on(`${data.box_chat._id}_SHUTDOWN_CALL_VIDEO`, (data) => {
+          dispatch(delete_popup_call_video(null));
+        });
       })
+      
+      
       window.addEventListener("popstate", () => {
         dispatch(set_url(new Date().toISOString()));
       });
@@ -163,7 +185,7 @@ function App({ result }) {
 
     if (!slugs) slugs = [];
     console.log("stateURL", slugs);
-    if (slugs.length >= 2 && slugs[0] === "account") {
+    if (slugs.length >= 2 && slugs[0] === "account" && slugs[1] === "personal") {
       console.log(
         `/${slugs
           .map((slug) => {
@@ -231,10 +253,17 @@ function App({ result }) {
                       <Widgets friendsOnline={state.friendsOnline} />
 
                       <Routes>
-                        <Route path="/*" element={<Feed />}></Route>
+                        {/* <Route path="/*" element={<Feed />}></Route> */}
+                        <Route path="/" element={<Home
+                        avatar_account={result.account.avatar_account}
+                        full_name={
+                          result.account.user_fname +" " +result.account.user_lname
+                        }
+                        />}></Route>
+                        <Route path="/post/:id" element={<DetailPost />}></Route>
                         {state_slugs[0] === "account" && (
                           <Route
-                            path={`/${state_slugs[0]}/${state_slugs[1]}/*`}
+                            path={`/account/personal/${state_slugs[2]}/*`}
                             element={
                               <PagePersonal
                                 slugs={state_slugs}
@@ -242,19 +271,28 @@ function App({ result }) {
                               />
                             }
                           >
-                            {LIST_TAB_HEADER_PERSONAL_DEFAULT.map((el, idx) => {
-                              return (
-                                <Route
-                                  key={idx}
-                                  path={`${el}`}
-                                  element={
-                                    <SubContentPersonal key={idx} data={el} />
-                                  }
-                                ></Route>
-                              );
-                            })}
+                            {state_slugs.length>3&&LIST_TAB_HEADER_PERSONAL_DEFAULT.map(
+                                        (el, idx) => {                                           
+                                            return (
+                                              <Route
+                                                key={idx}
+                                                path={`${el}`}
+                                                element={
+                                                  <SubContentPersonal
+                                                    key={idx}
+                                                    slug_personal={state_slugs[2]}
+                                                    optTab={el}
+                                                  />
+                                                }
+                                              ></Route>
+                                            );
+                                         
+                                        }
+                                      )}
+
                           </Route>
                         )}
+                        <Route path={`/account/personal/${state_slugs[2]}/setting`} element={<PagePersonalHeaderSetting />}></Route>
                         {state_slugs[0] === "friends" && (
                           <Route
                             path={`${state_slugs[0]}`}
@@ -281,10 +319,19 @@ function App({ result }) {
                                 return (
                                   <Route
                                     key={idx}
-                                    path={el.url}
+                                    path={`${el.url}`}
                                     element={el.element}
                                   >
-                                    {state_slugs.length > 2 && (
+                                    
+                                    {state_slugs.length == 2 
+                                  && <Route key={el.url} path={''} element={
+                                    result.account.list_response_new_friend.length==0 ?
+                                    <h1>Empty List </h1>:
+                                    <h1>Click on the person you want to see personal page!!!</h1>
+                                  }></Route>}
+                                    {state_slugs.length > 2 
+                                    
+                                    && (
                                       result.account.list_request_new_friend.map((friend,idx)=>{
                                         return(<Route
                                         key={idx}
@@ -293,25 +340,11 @@ function App({ result }) {
                                           <PagePersonal key={idx} slugs={state_slugs} />
                                         }
                                       >
-                                        {state_slugs.length>3&&LIST_TAB_HEADER_PERSONAL_DEFAULT.map(
-                                          (el, idx) => {
-                                            return (
-                                              <Route
-                                                key={idx}
-                                                path={`${el}`}
-                                                element={
-                                                  <SubContentPersonal
-                                                    key={idx}
-                                                    data={el}
-                                                  />
-                                                }
-                                              ></Route>
-                                            );
-                                          }
-                                        )}
                                       </Route>)
+                                      
                                       })
-                                    )}
+                                    )
+                                    }
                                   </Route>
                                 );
                               }
@@ -320,10 +353,18 @@ function App({ result }) {
                                 return (
                                   <Route
                                     key={idx}
-                                    path={el.url}
+                                    path={`${el.url}`}
                                     element={el.element}
                                   >
-                                    {state_slugs.length > 2 && (
+                                    {state_slugs.length == 2 
+                                  && <Route key={el.url} path={''} element={
+                                    result.account.list_response_new_friend.length==0 ?
+                                    <h1>Empty List </h1>:
+                                    <h1>Click on the person you want to see personal page!!!</h1>
+                                  }></Route>}
+                                    {state_slugs.length > 2
+                                    
+                                    && (
                                       result.account.list_response_new_friend.map((friend,idx)=>{
                                         return(<Route
                                         key={idx}
@@ -331,23 +372,7 @@ function App({ result }) {
                                         element={
                                           <PagePersonal key={idx} slugs={state_slugs} />
                                         }
-                                      >
-                                        {state_slugs.length>3&&LIST_TAB_HEADER_PERSONAL_DEFAULT.map(
-                                          (el, idx) => {
-                                            return (
-                                              <Route
-                                                key={idx}
-                                                path={`${el}`}
-                                                element={
-                                                  <SubContentPersonal
-                                                    key={idx}
-                                                    data={el}
-                                                  />
-                                                }
-                                              ></Route>
-                                            );
-                                          }
-                                        )}
+                                        >
                                       </Route>)
                                       })
                                     )}
@@ -361,7 +386,15 @@ function App({ result }) {
                                   path={`${el.url}`}
                                   element={el.element}
                                 >
-                                  {state_slugs.length > 2 && (
+                                  {state_slugs.length == 2 
+                                  && <Route key={el.url} path={''} element={
+                                    result.account.list_slug_friend.length==0 ?
+                                    <h1>Empty List </h1>:
+                                    <h1>Click on the person you want to see personal page!!!</h1>
+                                  }></Route>}
+                                  {state_slugs.length > 2 
+                                  
+                                  && (
                                     result.account.list_slug_friend.map((slug_friend,idx)=>{
                                       return(<Route
                                       key={idx}
@@ -370,22 +403,6 @@ function App({ result }) {
                                         <PagePersonal key={idx} slugs={state_slugs} />
                                       }
                                     >
-                                      {state_slugs.length>3&&LIST_TAB_HEADER_PERSONAL_DEFAULT.map(
-                                        (el, idx) => {
-                                          return (
-                                            <Route
-                                              key={idx}
-                                              path={`${el}`}
-                                              element={
-                                                <SubContentPersonal
-                                                  key={idx}
-                                                  data={el}
-                                                />
-                                              }
-                                            ></Route>
-                                          );
-                                        }
-                                      )}
                                     </Route>)
                                     })
                                   )}

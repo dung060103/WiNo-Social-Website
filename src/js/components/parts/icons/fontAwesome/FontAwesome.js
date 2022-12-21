@@ -37,6 +37,11 @@ export const  Icon_Friend = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={is
 export const  Icon_Question = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={isHot} sizeIcon={sizeIcon}><i class="fa-solid fa-question"></i></Icon_>
 export const  Icon_Unfriend = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={isHot} sizeIcon={sizeIcon}><i class="fa-solid fa-person-circle-xmark"></i></Icon_>
 export const  Icon_Follow = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={isHot} sizeIcon={sizeIcon}><i class="fa-regular fa-face-grin-stars"></i></Icon_>
+export const  Icon_Sign_Out = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={isHot} sizeIcon={sizeIcon}><i className="fa-solid fa-right-from-bracket"></i></Icon_>
+export const  Icon_Square = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={isHot} sizeIcon={sizeIcon}><i class="fa-regular fa-square"></i></Icon_>
+export const  Icon_Search = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={isHot} sizeIcon={sizeIcon}><i className="fa-solid fa-magnifying-glass"></i></Icon_>
+export const  Icon_CallVideo = ({isHot=true,sizeIcon=SIZE_SMALL})=><Icon_ isHot={isHot} sizeIcon={sizeIcon}><i class="fa-solid fa-video"></i></Icon_>
+
 
 
 

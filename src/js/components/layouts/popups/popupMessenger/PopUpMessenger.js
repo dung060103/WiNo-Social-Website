@@ -7,6 +7,7 @@ import HeaderSpaceBetween from "../../../parts/subHeaders/headerSpaceBetween/Hea
 import {
   Icon_Angle_Down,
   Icon_Arrow_Down,
+  Icon_CallVideo,
   Icon_Close,
   Icon_Like,
   Icon_Phone,
@@ -21,42 +22,22 @@ import { createContext, useRef, useState, useEffect } from "react";
 import PopupSettingMessenger from "../popupSettingMessenger/PopupSettingMessenger/PopupSettingMessenger";
 import PopUp_ from "../popup";
 import { useStore } from "../../../../store";
-import { delete_popup_messenger } from "../../../../store/actions";
+import { add_popup_call_video, delete_popup_call_video, delete_popup_messenger } from "../../../../store/actions";
 import {
   isMeSender,
   shortLassSessionMess as Display_shortLassSessionMess,
 } from "../popupHeader/popupMessageHeader/PopupMessageHeader";
+import PopUpCallVideo from "../popupCallVideo/PopUpCallVideo";
+import { HOST_SERVER } from "../../../../config";
+import Peer from "peerjs";
 export const Context_Message = createContext();
 function PopUpMessenger({
   idChat,
   nameChat,
   avatarChat,
   last_interact,
-  membersChat = singleObj_constructor_toList(
-    new member([
-      {
-        name: "Admin",
-        avatar:
-          "https://i.pinimg.com/originals/5d/8c/0b/5d8c0b431360651f9fb2a773ae277617.jpg",
-        id: 1,
-      },
-    ])
-  ),
-  contentsPopUpMessenger = singleObj_constructor_toList(
-    new contentPopUpMessenger({
-      nameSender: "1412",
-      avatarSender:
-        "https://i.pinimg.com/736x/d4/99/fa/d499fae6edfc0f17e1fe81dbdf2dd243--case-closed-magic-kaito.jpg",
-      session_messages: singleObj_constructor_toList([
-        new content_sessionMessage({
-          text: "Alo",
-        }),
-        new content_sessionMessage({
-          text: "Ahhahhaha",
-        }),
-      ]),
-    })
-  ),
+  membersChat=[],
+  contentsPopUpMessenger = [],
 }) {
   const [state_contentsPopUpMessenger, setState_contentsPopUpMessenger] =
     useState(contentsPopUpMessenger);
@@ -70,20 +51,34 @@ function PopUpMessenger({
   const [isClose, setIs_close] = useState(false);
   const [isShowSettingMess, setIsShowSettingMess] = useState(false);
   const [isShowMoveDownMess, set_isShowMoveDownMess] = useState(false);
+  const [state_name_chat, set_state_name_chat] = useState(nameChat);
+  const [state_avatar_chat, set_state_avatar_chat] = useState(avatarChat);
+
   const refContentPopUp = useRef(null);
 
   const [stateCountMess, set_stateCountMess] = useState([]);
   const [statePopupContentMess, set_statePopupContentMess] = useState([]);
   const [stateReplyMess, set_stateReplyMess] = useState(null);
   useEffect(() => {
+    // console.log(`PEOPLE_${idChat}_UPDATE_BOX_CHAT`);
+
+    state.socketChat.on(`${state.account.slug_personal}_SHUTDOWN_CALL_VIDEO`, (data) => {
+      // dispatch(delete_popup_call_video(null));
+    })
+
+    state.socketChat.on(`PEOPLE_${idChat}_UPDATE_BOX_CHAT`, (data) => {
+      set_state_name_chat(data.box_chat.name_chat);
+      set_state_avatar_chat(data.box_chat.avatar_chat)
+    })
     state.socketChat.on(`PEOPLE_${idChat}_SENDING`, (content_messages) => {
       
       var state_tmp = state_contentsPopUpMessenger;
       var last_content_mess=state_contentsPopUpMessenger[state_contentsPopUpMessenger.length - 1];
       var last_session_mess=null;
+      console.log(content_messages.value_content_sessionMessage);
       if(last_content_mess)
       {
-        console.log('_SENDING',last_content_mess.session_messages.length);
+        // console.log('_SENDING',last_content_mess.session_messages.length);
         last_session_mess=last_content_mess.session_messages[last_content_mess.session_messages.length-1];
         if (
           state_contentsPopUpMessenger.length > 0 &&
@@ -100,10 +95,7 @@ function PopUpMessenger({
                 isMe:
                   state.account.slug_personal ==
                   content_messages.account.slug_personal,
-                name_sender:
-                  content_messages.account.user_fname +
-                  " " +
-                  content_messages.account.user_lname,
+                name_sender:content_messages.value_content_sessionMessage.name_sender,
                 avatar_account: content_messages.account.avatar_account,
                 session_messages:
                   content_messages.value_content_sessionMessage.session_messages,
@@ -310,11 +302,12 @@ function PopUpMessenger({
             set_stateReplyMess,
             statePopupContentMess,
             set_statePopupContentMess,
-            idChat,
-            membersChat,
             isShowSettingMess, setIsShowSettingMess,
             isClose, setIs_close,
-            nameChat,
+            idChat,
+            membersChat,
+            nameChat:state_name_chat,
+            avatarChat:state_avatar_chat,
           }}
         >
           {!isZoomOut && (
@@ -333,8 +326,15 @@ function PopUpMessenger({
                           }}
                         >
                           <ItemOpt
-                            component_Left={<LabelCircle urlImg={avatarChat} />}
-                            children_centerItemOpt={<b>{nameChat}</b>}
+                            component_Left={<LabelCircle urlImg={state_avatar_chat} />}
+                            children_centerItemOpt={<b
+                            style={{
+                              "whiteSpace": "nowrap",
+                              "textOverflow": "ellipsis",
+                              "width": "160px",
+                              "overflow": "hidden"
+                            }}
+                            >{state_name_chat}</b>}
                             component_Right={
                               <div>
                                 <Icon_Angle_Down />
@@ -352,11 +352,35 @@ function PopUpMessenger({
                                 socket: state.socketChat,
                                 accountTyping: state.account,
                               });
+                              const peer = new Peer()
+                              fetch(`${HOST_SERVER}/chat/callVideo`,{
+                                body:JSON.stringify({
+                                  idChat,
+                                  socketId:state.socketChat.id,
+                                  content_message: new contentPopUpMessenger({
+                                    slug_sender:state.account.slug_personal,
+                                    session_messages: [new content_sessionMessage({
+                                      notification: new notificationMess({
+                                        callVideo : new notification_callVideo({
+                                          isEnded:false,
+                                          slug_caller:state.account.slug_personal
+                                        })
+                                      })
+                                    })]
+                                  })
+                                }),
+                                headers:{
+                                  'Content-Type':'application/json'
+                                },
+                                credentials:'include',
+                                method:'POST'
+                              })
+                              dispatch(add_popup_call_video(<PopUpCallVideo membersChat={membersChat} peer={peer} avatarCallVideo={state_avatar_chat} nameCallVideo={state_name_chat} idChat={idChat}/>));
                             }}
                           >
-                            <Icon_Phone />
+                            <Icon_CallVideo />
                           </span>
-                          <span
+                          {/* <span
                             onClick={(event) => {
                               noTyping_chat({
                                 idChat: idChat,
@@ -364,28 +388,10 @@ function PopUpMessenger({
                                 accountTyping: state.account,
                               });
 
-                              var video = document.createElement("video");
-                              video.width = 500;
-                              video.height = 500;
-                              video.autoplay = true;
-                              video.style.position = "fixed";
-
-                              document.body.appendChild(video);
-                              if (
-                                navigator.mediaDevices &&
-                                navigator.mediaDevices.getUserMedia
-                              ) {
-                                navigator.mediaDevices
-                                  .getUserMedia({ video: true, audio: false })
-                                  .then((stream) => {
-                                    video.srcObject = stream;
-                                    video.play();
-                                  });
-                              }
                             }}
                           >
                             <Icon_Video />
-                          </span>
+                          </span> */}
 
                           <div
                             onClick={() => {
@@ -435,7 +441,8 @@ function PopUpMessenger({
                     }}
                   >
                     {state_contentsPopUpMessenger.map((el, idx) => {
-                      console.log(el.slug_sender,state.account.slug_personal);
+                      // console.log(el.session_messages);
+                      // console.log(el.slug_sender,state.account.slug_personal);
                       return (
                         <Message
                           idxMessage={idx}
@@ -545,7 +552,8 @@ function PopUpMessenger({
                   >
                     {nameChat}
                   </div>
-                  <div style={{ display: "flex",marginLeft:'10px', }}>
+                  {state_contentsPopUpMessenger[state_contentsPopUpMessenger.length - 1] &&
+                    <div style={{ display: "flex",marginLeft:'10px', }}>
                     <div style={{ marginRight: "10px" }}>
                       {last_interact
                         ? isMeSender({
@@ -578,6 +586,7 @@ function PopUpMessenger({
                           )}
                     </p>
                   </div>
+                  }
                 </div>
               ) : (
                 ""
@@ -597,7 +606,7 @@ function PopUpMessenger({
                   handleRemove={() => {
                     dispatch(delete_popup_messenger({ idChat }));
                   }}
-                  urlImg={avatarChat}
+                  urlImg={state_avatar_chat}
                 />
               </span>
             </div>
@@ -642,20 +651,77 @@ export function content_sessionMessage({
 
 }
 export function notificationMess({
-  join_chat,
-  leave_chat,
-  modify_name_chat,
-  modify_nick_name,
+  join_chat=null,
+  leave_chat=null,
+  modify_name_chat=null,
+  modify_nick_name=null,
+  change_avatar_chat=null,
+  callVideo=null,
 })
 {
   this.join_chat=join_chat;
   this.leave_chat=leave_chat;
   this.modify_name_chat=modify_name_chat;
   this.modify_nick_name=modify_nick_name;
+  this.change_avatar_chat=change_avatar_chat;
+  this.callVideo=callVideo;
 }
-export function notification_join_chat_Mess({})
+export function notification_modify_name_chat_Mess({
+  slug_performer,
+  old_name_chat,
+  new_name_chat,
+
+  slug_affecter,
+})
 {
-  // slug_inviter
+  this.slug_performer=slug_performer;
+  this.new_name_chat=new_name_chat;
+  this.old_name_chat=old_name_chat;
+  this.slug_affecter=slug_affecter;
+}
+export function notification_modify_nick_name_Mess({
+  slug_performer,
+  old_nick_name,
+  new_nick_name,
+
+  slug_affecter,
+})
+{
+  this.slug_performer=slug_performer;
+  this.new_nick_name=new_nick_name;
+  this.old_nick_name=old_nick_name;
+  this.slug_affecter=slug_affecter;
+}
+export function notification_leave_chat_Mess({
+  slug_performer,
+})
+{
+  this.slug_performer=slug_performer;
+}
+export function notification_callVideo({
+  isEnded,
+  slug_caller,
+})
+{
+  this.isEnded=isEnded;
+  this.slug_caller=slug_caller;
+
+}
+export function notification_change_avatar_chat_Mess({
+  slug_performer,
+})
+{
+  this.slug_performer=slug_performer;
+}
+export function notification_join_chat_Mess({
+  slug_performer,
+  name_affecter,
+  slug_affecter,
+})
+{
+  this.slug_performer = slug_performer;
+  this.slug_affecter = slug_affecter;
+  this.name_affecter = name_affecter;
 }
 export function interactMessage({
   time_interact = new Date().toISOString(),

@@ -1,5 +1,5 @@
 import { type } from "@testing-library/user-event/dist/type";
-import { ADD_FRIEND_ONLINE, ADD_POPUP_CONTENT, ADD_POPUP_MESSENGER, ADD_POPUP_REVIEW, DELETE_FRIEND_ONLINE, DELETE_POPUP_MESSENGER, DELETE_POPUP_REVIEW, DELETE_POP_CONTENT, SET_DATA_ACCOUNT, SET_IO, SET_NOTIFICATION_MESS, SET_URL } from "./constants";
+import { ADD_FRIEND_ONLINE, ADD_POPUP_CALL_VIDEO, ADD_POPUP_CONTENT, ADD_POPUP_MESSENGER, ADD_POPUP_REVIEW, DELETE_FRIEND_ONLINE, DELETE_POPUP_CALL_VIDEO, DELETE_POPUP_MESSENGER, DELETE_POPUP_REVIEW, DELETE_POP_CONTENT, SET_DATA_ACCOUNT, SET_IO, SET_NOTIFICATION_MESS, SET_URL } from "./constants";
 export const add_popup_content = payload =>({
     type:ADD_POPUP_CONTENT
     ,payload
@@ -46,5 +46,13 @@ export const delete_popup_review= payload =>({
 })
 export const set_url  =payload=>({
     type:SET_URL,
+    payload
+})
+export const add_popup_call_video = payload=>({
+    type:ADD_POPUP_CALL_VIDEO,
+    payload
+});
+export const delete_popup_call_video = payload=>({
+    type:DELETE_POPUP_CALL_VIDEO,
     payload
 })

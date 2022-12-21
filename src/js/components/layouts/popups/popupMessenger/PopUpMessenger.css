@@ -10,8 +10,8 @@
     background: var(--greenColorEnd_Background);
     border: 2px solid var(--greenColorHot);
     border-radius: 8px;
-    max-width: 390px;
-    min-width: 390px;
+    max-width: 400px;
+    min-width: 400px;
 }
 .content-popupMessenger
 {

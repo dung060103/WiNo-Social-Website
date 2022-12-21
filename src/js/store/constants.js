@@ -8,6 +8,10 @@ export const ADD_FRIEND_ONLINE = "add_friend_online";
 export const DELETE_FRIEND_ONLINE = "delete_friend_online";
 export const SET_DATA_ACCOUNT = "set_data_account";
 export const SET_NOTIFICATION_MESS = "set_notification_mess";
+
+export const ADD_POPUP_CALL_VIDEO = "add_popup_call_video";
+export const DELETE_POPUP_CALL_VIDEO = "delete_popup_call_video";
+
 export const SET_IO = "set_io";
 export const SET_URL = 'set_url'
 export const SIZE_TINY = "TINY";
@@ -22,10 +26,8 @@ export const LIST_INTERACT_MESS_DEFAULT =['❤️','😆','👍','😭','😡']
 export const LIST_TAB_HEADER_PERSONAL_DEFAULT =[
     "Post",
     "Introduction",
-    "Tag",
-    "Follow",
+    "Friends",
     "Picture",
-    "Video",
     "More",
   ]
 

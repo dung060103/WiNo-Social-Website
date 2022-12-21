@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 import { HOST_SERVER } from "../config";
-import { ADD_FRIEND_ONLINE, ADD_POPUP_CONTENT, ADD_POPUP_MESSENGER, ADD_POPUP_REVIEW, DELETE_FRIEND_ONLINE, DELETE_POPUP_MESSENGER, DELETE_POPUP_REVIEW, DELETE_POP_CONTENT, SET_DATA_ACCOUNT, SET_IO, SET_NOTIFICATION_MESS, SET_URL } from "./constants";
+import { ADD_FRIEND_ONLINE, ADD_POPUP_CALL_VIDEO, ADD_POPUP_CONTENT, ADD_POPUP_MESSENGER, ADD_POPUP_REVIEW, DELETE_FRIEND_ONLINE, DELETE_POPUP_CALL_VIDEO, DELETE_POPUP_MESSENGER, DELETE_POPUP_REVIEW, DELETE_POP_CONTENT, SET_DATA_ACCOUNT, SET_IO, SET_NOTIFICATION_MESS, SET_URL } from "./constants";
 
 export const initStates = {
   listNotificationMess:[],
@@ -11,11 +11,24 @@ export const initStates = {
   friendsOnline:[],
   socket:io(HOST_SERVER,{transports:['websocket']}),
   socketChat:io(HOST_SERVER+'/chat',{transports:['websocket']}),
-  url:`${HOST_SERVER}/`
+  url:`${HOST_SERVER}/`,
+  popUpCallVideo:null,
 };
 export function reducer(state, action) {
   switch (action.type) {
-    case ADD_POPUP_CONTENT:
+      case ADD_POPUP_CALL_VIDEO:
+      console.log(state);
+      return {
+        ...state,
+        popUpCallVideo:  action.payload,
+      };
+      case DELETE_POPUP_CALL_VIDEO:
+      console.log(state);
+      return {
+        ...state,
+        popUpCallVideo:  action.payload,
+      };
+      case ADD_POPUP_CONTENT:
       console.log(state);
       return {
         ...state,

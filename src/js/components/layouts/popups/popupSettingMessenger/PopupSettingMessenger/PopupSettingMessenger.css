@@ -33,3 +33,39 @@
     right: 0;
     bottom: 0;
 }
+.section_btnAddMembers,.section-btnChangeAvatarChat
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+}
+.section_selectedAddMembers
+{
+    display: flex;
+}
+.shortNameSelectedNewMember
+{
+    width: 100%;
+    text-align: center;
+}
+.item-NameSelectedNewMember
+{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.section-changeAvatarChat
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body-changeAvatarChat
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

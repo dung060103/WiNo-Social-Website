@@ -466,7 +466,6 @@ function FormMessenger({ idChat }) {
               >
                 <Icon_Image />
               </span>
-              <Icon_Sticker />
               <span
                 onClick={() => {
                   set_stateShowPickerGIF(!stateShowPickerGIF);

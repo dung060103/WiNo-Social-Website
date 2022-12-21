@@ -94,7 +94,7 @@ display: flex;
 .body-interactMess {
     position: absolute;
     display: flex;
-    top: -44px;
+    bottom: -50px;
     left: -50%;
     height: max-content;
     width: max-content;
@@ -117,6 +117,13 @@ display: flex;
 }
 .isMe .body-interactMess{
     right: 50%;
+}
+.contentCenter-message.notification
+{
+    margin-left: 0px !important;
+    align-items: center;
+    width: 100%;
+    margin-right: 0px !important;
 }
 .contentCenter-message 
 {

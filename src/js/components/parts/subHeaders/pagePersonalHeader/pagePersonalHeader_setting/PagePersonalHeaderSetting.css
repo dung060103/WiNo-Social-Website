@@ -1,0 +1,69 @@
+
+.card_form_edit_info{
+    display: grid;
+}
+.container_edit_info_user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.header_form_edit_info_user{
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4de739;
+
+} 
+.detail_info_user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body_form_edit_info_user{
+    
+    padding-top: 10px;
+}
+.txt_edit_setting_form{
+    display: grid;
+    grid-template-columns: .6fr 1.4fr;
+    padding-top: 10px;
+    justify-content: center  !important;
+}
+
+#standard-basic{
+    width: 250px;
+    height: 32px;
+    font: inherit;
+}
+.btn_handle_delete_form{
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #27821b;
+    justify-content: end;
+}
+.btn_form_edit_info_user{
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+}
+
+.title_setting_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    
+
+}
+
+.txt_input_edit{
+    padding-left: 50px;
+}
+
+.footer_form_edit_info_user{
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+}

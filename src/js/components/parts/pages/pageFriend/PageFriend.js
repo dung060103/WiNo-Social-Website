@@ -21,6 +21,7 @@ function PageFriend({}) {
       <div className="main-pageFriend">
         <div className="body-pageFriend">
           <Outlet />
+          
         </div>
       </div>
     </div>
@@ -37,8 +38,7 @@ export function SidebarFriendMenuDefault() {
         <div className="listMenu-pageFriend">
           <Link to={`request`}
           onClick={()=>{
-
-          // dispatch(set_url(`${window.location.href}/${'response'}`))
+          dispatch(set_url(`${window.location.href}/${'response'}`))
           }}>
 
             <ItemOpt
@@ -48,7 +48,7 @@ export function SidebarFriendMenuDefault() {
           </Link>
           
           <Link onClick={()=>{
-              // dispatch(set_url(`${window.location.href}/${'response'}`))
+              dispatch(set_url(`${window.location.href}/${'response'}`))
           }} to={`response`}>
             <ItemOpt
               children_centerItemOpt={<b>Response</b>}
@@ -56,7 +56,7 @@ export function SidebarFriendMenuDefault() {
             />
           </Link>
           <Link onClick={()=>{
-              // dispatch(set_url(`${window.location.href}/${'list'}`))
+              dispatch(set_url(`${window.location.href}/${'list'}`))
           }} to={`list`}>
             <ItemOpt
               children_centerItemOpt={<b>All friends</b>}
@@ -66,11 +66,12 @@ export function SidebarFriendMenuDefault() {
         </div>
       </div>
       <div className="sidebarRight-pageFriend">
-        <Outlet />
+        <h1>Please select the list of friends you want to see</h1>
       </div>
     </Fragment>
   );
 }
+ 
 export function SidebarFriendRequest() {
   const [state_listFriend, set_state_listFriend] = useState(null);
   const [state, dispatch] = useStore();

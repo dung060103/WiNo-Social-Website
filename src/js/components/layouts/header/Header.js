@@ -123,7 +123,7 @@ function Header({ avatar_account, slug_personal, account}) {
       </div>
       <div className="section-center_header">
         <div className="part-search__header">
-          <FormSearch placeholder_text={"Search on Songs"}
+          <FormSearch placeholder_text={"Search..."}
           handler_Search={handler_Search}/>
           {
             show_search && (
@@ -140,7 +140,7 @@ function Header({ avatar_account, slug_personal, account}) {
 
                           <Link 
                           
-                          to={`/account/${value.slug_personal}`} 
+                          to={`/account/personal/${value.slug_personal}`} 
                           className="link_search" 
                           key={idx}>
                               <Avatar src={value.avatar_account} alt="" className="image_drop_avatar" />

@@ -32,6 +32,10 @@ import {
 } from "../../../../store/functions";
 import { set_data_account } from "../../../../store/actions";
 import { req_getDetailChat } from "../../../layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader";
+
+
+import { Link } from 'react-router-dom';
+
 function PagePersonalHeader({ stateAccount }) {
   var [state, dispatch] = useStore();
   var account = stateAccount;
@@ -131,11 +135,13 @@ function ButtonHeaderWithSlugPersonal({ account, state, dispatch }) {
 
   return isMe ? (
     <Fragment>
+      <Link to={`/account/personal/${state.account.slug_personal}/setting`}>
       <ButtonNormal
         textBtn={"Edit information"}
         elIcon={<Icon_Pen_Square isHot={false} />}
         isNo={false}
       />
+      </Link>
       <ButtonNormal
         textBtn={"Post story"}
         elIcon={<Icon_Circle_Plus />}

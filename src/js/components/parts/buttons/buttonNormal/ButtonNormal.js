@@ -11,6 +11,7 @@ function ButtonNormal(
         handleClick=()=>{},
         isEnable=true,
         componentPopUP=[],
+        isRadio=false,
     }
 ) {
 
@@ -37,7 +38,7 @@ useEffect(()=>{set_stateEnable(isEnable)},[isEnable])
             
 
           }
-          if(isEnable)
+          if(isRadio)
           {
             set_stateEnable(false)
           }
