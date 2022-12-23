@@ -502,6 +502,9 @@ function ItemSelectMember({ member, OBJ_useState_listSelectEd }) {
   );
   useEffect(() => {
     if (state_selectEd) {
+      if(!OBJ_useState_listSelectEd.state_membersSelected.some(
+        (memberSelected) => memberSelected.slug_personal == member.slug_personal
+      ))
       OBJ_useState_listSelectEd.set_state_membersSelected(
         OBJ_useState_listSelectEd.state_membersSelected.concat([member])
       );

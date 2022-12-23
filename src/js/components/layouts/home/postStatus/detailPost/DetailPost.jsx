@@ -66,7 +66,7 @@ function DetailPost(props) {
 
         if (reload_post) {
             const params = {
-                id_user_post: id_user_post,
+                // id_user_post: id_user_post,
                 id_image_post: id_image_post
             }
 
@@ -103,7 +103,7 @@ function DetailPost(props) {
             const fetchData = async () => {
 
                 const params = {
-                    id_user: id_user_post,
+                    // id_user: id_user_post,
                     id_image_post: id_image_post
                 }
 
@@ -158,7 +158,7 @@ function DetailPost(props) {
         const fetchData = async () => {
 
             const params = {
-                id_user: state.account._id,
+                // id_user: state.account._id,
                 id_image_post: id_image_post
             }
 
@@ -168,18 +168,18 @@ function DetailPost(props) {
             console.log(response)
 
 
-            // Xử lý thêm dữ liệu vào Database Favorite
-            const params_far = {
-                id_user: state.account._id,
-                id_user_another: id_user_post,
-                id_image_post: id_image_post,
-                category: false
-            }
+            // // Xử lý thêm dữ liệu vào Database Favorite
+            // const params_far = {
+            //     id_user: state.account._id,
+            //     id_user_another: id_user_post,
+            //     id_image_post: id_image_post,
+            //     category: false
+            // }
 
-            const query_far = '?' + queryString.stringify(params_far)
+            // const query_far = '?' + queryString.stringify(params_far)
 
-            const response_far = await Favorites.post_Favorite(query_far)
-            console.log(response_far)
+            // const response_far = await Favorites.post_Favorite(query_far)
+            // console.log(response_far)
 
         }
         set_status_like(true);
@@ -187,10 +187,10 @@ function DetailPost(props) {
 
 
         // Bắt đầu gửi socket
-        const data = {
-            id_user: state.account._id,
-            id_user_another: id_user_post
-        }
+        // const data = {
+        //     id_user: state.account._id,
+        //     id_user_another: id_user_post
+        // }
 
         //socket.emit('like', data)
 
@@ -207,7 +207,7 @@ function DetailPost(props) {
         const fetchData = async () => {
 
             const params = {
-                id_user: id_user_post,
+                // id_user: id_user_post,
                 id_image_post: id_image_post
             }
 
@@ -220,25 +220,25 @@ function DetailPost(props) {
         set_status_like(false);
         fetchData()
 
-        const deleteData = async () => {
+        // const deleteData = async () => {
 
-            // Xử lý delete dữ liệu Database Favorite
-            const params = {
-                id_user: id_user_post,
-                id_user_another: state.account._id,
-            }
+        //     // Xử lý delete dữ liệu Database Favorite
+        //     const params = {
+        //         id_user: id_user_post,
+        //         id_user_another: state.account._id,
+        //     }
 
-            const query = '?' + queryString.stringify(params)
+        //     const query = '?' + queryString.stringify(params)
 
-            console.log(query)
+        //     console.log(query)
 
-            const response = await Favorites.delete_Favorite(query)
-            console.log(response)
+        //     const response = await Favorites.delete_Favorite(query)
+        //     console.log(response)
 
-        }
+        // }
 
 
-        deleteData()
+        // deleteData()
 
         set_reload_post(true)
 
@@ -295,31 +295,31 @@ function DetailPost(props) {
             console.log(response)
 
 
-            // Xử lý thêm dữ liệu vào Database Favorite
-            const params_far = {
-                id_user: state.account._id,
-                id_user_another: id_user_post,
-                id_image_post: id_image_post,
-                category: true
-            }
+            // // Xử lý thêm dữ liệu vào Database Favorite
+            // const params_far = {
+            //     id_user: state.account._id,
+            //     id_user_another: id_user_post,
+            //     id_image_post: id_image_post,
+            //     category: true
+            // }
 
-            const query_far = '?' + queryString.stringify(params_far)
+            // const query_far = '?' + queryString.stringify(params_far)
 
-            const response_far = await Favorites.post_Favorite(query_far)
-            console.log(response_far)
+            // const response_far = await Favorites.post_Favorite(query_far)
+            // console.log(response_far)
 
         }
 
         fetchData()
 
 
-        // Bắt đầu gửi socket
-        const data = {
-            id_user: state.account._id,
-            id_user_another: id_user_post
-        }
+        // // Bắt đầu gửi socket
+        // const data = {
+        //     id_user: state.account._id,
+        //     id_user_another: id_user_post
+        // }
 
-        //socket.emit('like', data)
+        // //socket.emit('like', data)
 
 
         set_load_comment(true)

@@ -24,7 +24,7 @@ import { HOST_SERVER } from "../../../../config";
 import { json } from "react-router";
 import ItemOpt from "../../item/itemOpt/ItemOpt";
 import {
-  req_acceptAddNewFriend,
+   req_acceptAddNewFriend,
   req_refuse_requestAddFriend,
   req_remove_requestAddFriend,
   req_requestAddFriend,

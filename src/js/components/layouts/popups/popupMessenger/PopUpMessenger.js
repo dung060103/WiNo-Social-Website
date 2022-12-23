@@ -213,16 +213,38 @@ function PopUpMessenger({
         setIs_Hover_zoomOut(false);
       }
     });
+    // console.log(`PEOPLE_${idChat}_REACTING`);
     state.socketChat.on(`PEOPLE_${idChat}_REACTING`, (dataReacting) => {
-      var idx_content_message = dataReacting.idx_sessionMessage.split("/")[0];
+
+      var idx_content_message = parseInt(dataReacting.idx_sessionMessage.split("/")[0]);
       var idx_sessionMessageUpdate =
-        dataReacting.idx_sessionMessage.split("/")[1];
-      if (state_contentsPopUpMessenger[idx_content_message]) {
-        state_contentsPopUpMessenger[idx_content_message].session_messages[
-          idx_sessionMessageUpdate
-        ] = dataReacting.value_sessionMessage;
-      }
-      setState_contentsPopUpMessenger(state_contentsPopUpMessenger.concat([]));
+      parseInt(dataReacting.idx_sessionMessage.split("/")[1]);
+        var dataMemberInteract_er =  membersChat.filter(member=>member.slug_member===dataReacting.slug_interact_er)[0];
+        membersChat.forEach(member=>{
+          if(member.slug_member===state.account.slug_personal)
+          {
+            if(member.startContent)
+            {
+              console.log(`PEOPLE_${idChat}_REACTING`,idx_content_message,state_contentsPopUpMessenger[idx_content_message]);
+              idx_content_message=idx_content_message-member.startContent-1;
+            }
+            if(dataMemberInteract_er&&dataMemberInteract_er.startContent>0)
+            {
+              idx_content_message=idx_content_message+dataMemberInteract_er.startContent+1;
+            }
+            console.log(`PEOPLE_${idChat}_REACTING`,idx_content_message,state_contentsPopUpMessenger[idx_content_message]);
+            if (state_contentsPopUpMessenger[idx_content_message]) {
+              state_contentsPopUpMessenger[idx_content_message].session_messages[
+                idx_sessionMessageUpdate
+              ] = dataReacting.value_sessionMessage;
+              setState_contentsPopUpMessenger([].concat(state_contentsPopUpMessenger));
+            }
+          }
+
+
+
+        })
+
     });
   }, [state_contentsPopUpMessenger]);
   useEffect(() => {

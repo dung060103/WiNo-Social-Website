@@ -22,30 +22,9 @@ export default function Sidebar({mode,setMode,isShowTittle}) {
                             />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#">
-                            <SidebarRow isShowTittle={isShowTittle} 
-                            Icon={Article} 
-                            title="Pages" 
-                            />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#">
-                        <SidebarRow isShowTittle={isShowTittle} 
-                            Icon={Group} 
-                            title="Groups" 
-                            />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#">
-                        <SidebarRow isShowTittle={isShowTittle} 
-                            Icon={Storefront} 
-                            title="Marketplace" 
-                            />
-                        </ListItemButton>
-                    </ListItem>
+                    
+                   
+                    
                     <ListItem disablePadding>
                         <ListItemButton component="a" href="#">
                         <SidebarRow isShowTittle={isShowTittle}
@@ -68,6 +47,7 @@ export default function Sidebar({mode,setMode,isShowTittle}) {
                         <SidebarRow isShowTittle={isShowTittle} 
                             Icon={AccountBox} 
                             title="Profile" 
+                            href={`account/personal/${state.slug_pesonal}/setting`}
                             />
                         </ListItemButton>
                     </ListItem>

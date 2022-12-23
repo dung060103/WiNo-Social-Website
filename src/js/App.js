@@ -259,6 +259,7 @@ function App({ result }) {
                         full_name={
                           result.account.user_fname +" " +result.account.user_lname
                         }
+                        data_account = {result.account}
                         />}></Route>
                         <Route path="/post/:id" element={<DetailPost />}></Route>
                         {state_slugs[0] === "account" && (

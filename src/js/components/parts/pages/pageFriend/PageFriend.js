@@ -3,7 +3,7 @@ import { Link, Navigate, Outlet, useNavigate } from "react-router-dom";
 import { HOST_SERVER } from "../../../../config";
 import { useStore } from "../../../../store";
 import { set_url } from "../../../../store/actions";
-import { req_acceptAddNewFriend, req_refuse_requestAddFriend } from "../../../../store/functions";
+import {   req_acceptAddNewFriend, req_refuse_requestAddFriend } from "../../../../store/functions";
 import ButtonNormal from "../../buttons/buttonNormal/ButtonNormal";
 import {
   Icon_Arrow_Left,

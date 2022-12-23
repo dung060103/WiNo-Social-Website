@@ -1,4 +1,4 @@
-import React, { useState,
+import React, { useRef, useState,
   //  useRef
    } from "react";
 
@@ -6,21 +6,22 @@ import { Link } from "react-router-dom";
 
 // import ReCAPTCHA from "react-google-recaptcha";
 
-import { HOST_SERVER
+import { HOST_SERVER, SITE_KEY_RECAPTCHA
   // , SITE_KEY_RECAPTCHA
  } from "../../../../../config";
 import FormAccount from "../formAccount/FormAccount.module.scss";
 import LogoWebsite from "../../../../logo/logoWebsite/LogoWebsite";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Login() {
   // console.log(FormAccount);
-  // const captchaRef = useRef(null);
+  const captchaRef = useRef(null);
   const [gmail, setGmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSignIn = function (e) {
     e.preventDefault();
-    // const token = captchaRef.current.getValue();
-    // if (token !== "") {
+    const token = captchaRef.current.getValue();
+    if (token !== "") {
       fetch(HOST_SERVER + "/account/signin", {
         method: "POST",
         mode: "cors",
@@ -31,7 +32,7 @@ function Login() {
         body: JSON.stringify({
           password,
           gmail,
-          // token,
+          token,
         }),
       }).then((res) => {
         res.text().then((text) => {
@@ -41,10 +42,10 @@ function Login() {
           }
         });
       });
-    // } else {
-    //   alert("Stupid");
-    // }
-    // captchaRef.current.reset();
+    } else {
+      alert("Stupid");
+    }
+    captchaRef.current.reset();
   };
   return (
     <div className={FormAccount.wrapper}>
@@ -71,13 +72,13 @@ function Login() {
                 setPassword(e.currentTarget.value);
               }}
             />
-            {/* <VisibilityIcon/> */}
+            {/* <VisibilityIco/> */}
           </div>
             <div className={FormAccount.container_ReCAPTCHA}>
-              {/* <ReCAPTCHA
+              <ReCAPTCHA
                 sitekey={SITE_KEY_RECAPTCHA}
                 ref={captchaRef}
-              /> */}
+              />
             </div>
           {/* <div className="g-recaptcha" data-sitekey="6LcCK0ciAAAAAED2CNknmxcjTqVQ4SwMwlYi9qAc"></div> */}
           <div className={[FormAccount.button, FormAccount.field].join(' ')}>

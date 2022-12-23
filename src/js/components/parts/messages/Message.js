@@ -56,6 +56,10 @@ function Message({
       }
     });
   },[])
+  useEffect(()=>{
+    set_state_component_contentCenter(component_contentCenter)
+  },[component_contentCenter])
+  
   return (
     (component_contentCenter.length>0&&component_contentCenter.some(el=>el!=null))
     &&(

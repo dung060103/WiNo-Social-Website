@@ -28,8 +28,9 @@ import { format } from "timeago.js";
 import { useStore } from "../../../store";
 import Users_Home from '../../../API/Users_Home';
 import Like from '../../../API/Like';
+import { HOST_SERVER } from "../../../config";
 
-export default function Home({ avatar_account,full_name }) {
+export default function Home({ avatar_account,full_name,data_account }) {
   const [open, setOpen] = useState(false);
   const UserBox = styled(Box)(({ theme }) => ({
     display: "flex",
@@ -100,7 +101,7 @@ export default function Home({ avatar_account,full_name }) {
                 const post_status_data = async () => {
 
                     const params = {
-                        id_user: state.account._id,
+                        id_user: data_account._id,
                         title: send,
                         image_body: url
                     }
@@ -139,7 +140,7 @@ export default function Home({ avatar_account,full_name }) {
      const fetchData = async () => {
 
          const params = {
-             id_user: state.account._id 
+             id_user: data_account._id 
          }
        
          const query = '?' + queryString.stringify(params)
@@ -147,14 +148,38 @@ export default function Home({ avatar_account,full_name }) {
         const response = await Users_Home.get_Users_Home(query)
  
         const reverse_data = response.reverse() 
-
+        //  console.log(response.reverse());
         const data = status_like(reverse_data)
-        set_list_post_home(data);
+        // set_list_post_home(data);
 
       }
-     fetchData()
+     fetchData();
 
- }, [state.account._id ])
+     const fetchAPI = ()=>
+     {
+      // console.log(data_account.slug_friends);
+      console.log(data_account);
+        fetch(`${HOST_SERVER}/friend/posts`,
+        {
+          method:'POST',
+          body:JSON.stringify({
+            slug_friends:data_account.list_slug_friend
+          }),
+          headers:{
+            'Content-Type':'application/json'
+          },
+          credentials:'include'
+        }).then(res=>res.text()).then(dataJSon=>{
+          var data = JSON.parse(dataJSon);
+          // console.log(data.result.reverse());
+          data.result.map(postFriend=>{
+            set_list_post_home(list_post_home.concat(postFriend.reverse()));
+          })
+        })
+     };
+     fetchAPI();
+
+ }, [])
  
  // Hàm này dùng để load bài viết ở trang home phụ thuộc vào state reload
  useEffect(() => {
@@ -164,7 +189,7 @@ export default function Home({ avatar_account,full_name }) {
          const fetchData = async () => {
 
              const params = {
-              id_user: state.account._id
+              id_user: data_account._id
              }
 
              const query = '?' + queryString.stringify(params)
@@ -188,9 +213,9 @@ export default function Home({ avatar_account,full_name }) {
  function status_like(data) {
 
   let array_new = []
-
   for (let i = 0; i < data.length; i++) {
-      if (!data[i].status_like) {
+    console.log(data);
+    if (!data[i].status_like) {
           array_new.push(data[i])
       }
   }
@@ -251,7 +276,7 @@ export default function Home({ avatar_account,full_name }) {
     
             const fetchData = async () => {
               const params = {
-                id_user: state.account._id
+                id_user: data_account._id
                }
   
                const query = '?' + queryString.stringify(params)
@@ -454,7 +479,7 @@ dataPost
     
       // delete dữ liệu Database Like
       const params = {
-          id_user: state.account._id,
+          // id_user: state.account._id,
           id_image_post: id_image_post
       }
     
@@ -509,35 +534,11 @@ dataPost
     const query = '?' + queryString.stringify(params)
   
     const response = await Like.post_like(query)
-    // console.log(response);
-    // set_list_post_home();
-              // Nếu mà user like bài viết của chính nó thì mình sẽ gán nó bằng session
-              // còn nếu không phải thì mình lấy id_user_following
-              let id_temp_following = id_user_following === '' ? state.account._id : id_user_following
   
-              // Thêm dữ liệu vào Database Favorite
-              const params_far = {
-                  id_user: state.account._id,
-                  id_user_another: id_temp_following,
-                  id_image_post: id_image_post,
-                  category: false
-              }
-  
-              const query_far = '?' + queryString.stringify(params_far)
-  
-              const response_far = await Favorite.post_Favorite(query_far)
-              console.log(response_far)
   
           }
     fetchData();
-    // set_users_like(true);
-          // const data = {
-          //     id_user: sessionStorage.getItem('id_user'),
-          //     id_user_another: id_user_following
-          // }
-  
-          // socket.emit('like', data)
-    // set_reload(true)
+    
     set_status_like(true);
   
   }
