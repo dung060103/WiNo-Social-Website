@@ -28,7 +28,7 @@ import {
   req_unfriend,
 } from '../../../../store/functions'
 import { set_data_account } from '../../../../store/actions'
-import { req_getDetailChat } from '../../../layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader'
+import { createBoxChat } from '../../../layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -233,10 +233,13 @@ function ButtonHeaderWithSlugPersonal({ account, state, dispatch }) {
         elIcon={<Icon_Mess />}
         isNo={true}
         handleClick={() => {
-          req_getDetailChat({
+          const members = [account.slug_personal, state.account.slug_personal]
+
+          createBoxChat({
             data_Chat_id: account.id_chatPersonalPage,
             dispatch,
             state,
+            members,
           })
         }}
       />

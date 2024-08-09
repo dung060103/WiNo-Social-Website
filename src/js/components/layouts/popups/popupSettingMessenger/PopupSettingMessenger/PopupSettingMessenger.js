@@ -172,7 +172,7 @@ function PopupSettingMessenger() {
                       query: {
                         id: value_Context_Message.idChat,
                       },
-                    }).then((data) => {
+                    }).then(({ data }) => {
                       dispatch(
                         add_popup_review(
                           <PopUpEditNickNameMember

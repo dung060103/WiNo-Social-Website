@@ -375,6 +375,38 @@ export const req_getDetailChat = async ({
     ),
   )
 }
+
+export const createBoxChat = async ({
+  data_Chat_id,
+  state,
+  dispatch,
+  members,
+}) => {
+  state.popUpContents.forEach((popUpContent) => {
+    if (popUpContent.props.children.props.listChat) {
+      dispatch(delete_pop_content(popUpContent))
+    }
+  })
+  const { data } = await createRequest('POST', '/chat/create-box-chat', {
+    body: {
+      _id: data_Chat_id,
+      members,
+    },
+  })
+
+  dispatch(
+    actions.add_popup_messenger(
+      <PopUpMessenger
+        membersChat={data.result.members}
+        idChat={data.result._id}
+        last_interact={data.result.last_interact}
+        avatarChat={data.shortChat.avatarChat}
+        nameChat={data.shortChat.nameChat}
+        contentsPopUpMessenger={data.result.content_messages}
+      />,
+    ),
+  )
+}
 function PopupCreateGroupChat({ initSuggestMembers }) {
   const [state_membersSearch, set_state_membersSearch] =
     useState(initSuggestMembers)
