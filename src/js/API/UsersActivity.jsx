@@ -1,4 +1,4 @@
-import { createRequest } from '../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 const Users_Activity = {
   getUsersActivity: async (id) => {

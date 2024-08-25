@@ -1,11 +1,11 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
-import { useStore } from '../../../../store'
-import { set_url } from '../../../../store/actions'
+import { useStore } from '@store'
+import { set_url } from '@store/actions'
 import {
   req_acceptAddNewFriend,
   req_refuse_requestAddFriend,
-} from '../../../../store/functions'
+} from '@store/functions'
 import ButtonNormal from '../../buttons/buttonNormal/ButtonNormal'
 import {
   Icon_Arrow_Left,
@@ -16,7 +16,7 @@ import {
 import ItemOpt from '../../item/itemOpt/ItemOpt'
 import LabelCircle from '../../labels/labelCircle/LabelCircle'
 import './PageFriend.css'
-import { createRequest } from '../../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 function PageFriend() {
   return (

@@ -1,15 +1,15 @@
 import {
   Icon_Angle_Right,
   Icon_Sign_Out,
-} from '../../../../parts/icons/fontAwesome/FontAwesome'
+} from '@components/parts/icons/fontAwesome/FontAwesome'
 import '../popupAccountHeader/PopupAccountHeader.css'
 import PopUpHeader from '../PopUpHeader'
-import ItemOpt from '../../../../parts/item/itemOpt/ItemOpt'
-import LabelCircle from '../../../../parts/labels/labelCircle/LabelCircle'
+import ItemOpt from '@components/parts/item/itemOpt/ItemOpt'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
 import { Link } from 'react-router-dom'
-import { useStore } from '../../../../../store/hooks'
-import { set_url } from '../../../../../store/actions'
-import { createRequest } from '../../../../../utilities/requests'
+import { useStore } from '@store/hooks'
+import { set_url } from '@store/actions'
+import { createRequest } from '@utils/requests'
 var listItemOptAccountHeader = [
   {
     el_Icon_Label: <i className="fa-solid fa-display"></i>,

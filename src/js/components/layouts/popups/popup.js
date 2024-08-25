@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { ContextPopUp } from '../../../store/Context'
+import { ContextPopUp } from '@store/Context'
 import './Popup_.css'
 import PropTypes from 'prop-types'
 

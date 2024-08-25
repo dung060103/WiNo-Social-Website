@@ -1,4 +1,4 @@
-import { BACKEND_API_URL } from '../config'
+import { BACKEND_API_URL } from '@config'
 const _fetch = async (method, path, { query = {}, body = null }) => {
   const url = prepareUrl(path, query)
   const headers = {}

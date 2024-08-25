@@ -5,7 +5,7 @@ import ShortInfoPersonal from '../../shorts/shortInfo/shortInfoPersonal/ShortInf
 import PagePersonalHeaderStyles from '../pagePersonalHeader/PagePersonalHeader.module.css'
 import ButtonNormal from '../../buttons/buttonNormal/ButtonNormal'
 import ListTabPersonalHeader from '../../lists/listTabPersonalHeader/ListTabPersonalHeader'
-import { useStore } from '../../../../store'
+import { useStore } from '@store'
 import {
   Icon_AddPerson,
   Icon_Circle_Plus,
@@ -26,9 +26,9 @@ import {
   cancelRequestAddFriend,
   req_requestAddFriend,
   req_unfriend,
-} from '../../../../store/functions'
-import { set_data_account } from '../../../../store/actions'
-import { createBoxChat } from '../../../layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader'
+} from '@store/functions'
+import { set_data_account } from '@store/actions'
+import { createBoxChat } from '@components/layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 

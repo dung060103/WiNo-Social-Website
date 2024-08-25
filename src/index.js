@@ -7,9 +7,9 @@ import App from './js/App'
 import { theme } from './theme'
 
 import reportWebVitals from './reportWebVitals'
-import { ProviderPopUpContent } from './js/store'
-import { ProviderAccount } from './js/store/Provider'
-import { createRequest } from './js/utilities/requests'
+import { ProviderPopUpContent } from '@store'
+import { ProviderAccount } from '@store/Provider'
+import { createRequest } from '@utils/requests'
 async function run() {
   var scriptCaptcha = document.createElement('script')
   scriptCaptcha.src = 'https://www.google.com/recaptcha/api.js'

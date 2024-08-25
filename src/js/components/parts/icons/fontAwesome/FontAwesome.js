@@ -1,4 +1,4 @@
-import { SIZE_SMALL } from '../../../../store/constants'
+import { SIZE_SMALL } from '@store/constants'
 import Icon_ from '../Icon'
 import PropTypes from 'prop-types'
 

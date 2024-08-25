@@ -1,14 +1,14 @@
 import Peer from 'peerjs'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { useStore } from '../../../../store'
-import { delete_popup_call_video } from '../../../../store/actions'
-import ButtonNormal from '../../../parts/buttons/buttonNormal/ButtonNormal'
-import { Icon_Phone } from '../../../parts/icons/fontAwesome/FontAwesome'
-import ItemOpt from '../../../parts/item/itemOpt/ItemOpt'
-import LabelCircle from '../../../parts/labels/labelCircle/LabelCircle'
+import { useStore } from '@store'
+import { delete_popup_call_video } from '@store/actions'
+import ButtonNormal from '@components/parts/buttons/buttonNormal/ButtonNormal'
+import { Icon_Phone } from '@components/parts/icons/fontAwesome/FontAwesome'
+import ItemOpt from '@components/parts/item/itemOpt/ItemOpt'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
 import './PopUpCallVideo.css'
 import PropTypes from 'prop-types'
-import { createRequest } from '../../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 /* eslint-disable no-unused-vars */
 function PopUpCallVideo({

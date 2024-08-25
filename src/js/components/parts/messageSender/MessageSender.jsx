@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import './MessageSender.css'
 import FormTagFriend from './FormTagFriend'
-import SidebarRow from '../../layouts/sidebars/sidebarLeft/SidebarRow'
+import SidebarRow from '@components/layouts/sidebars/sidebarLeft/SidebarRow'
 import { Avatar, Button } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import {

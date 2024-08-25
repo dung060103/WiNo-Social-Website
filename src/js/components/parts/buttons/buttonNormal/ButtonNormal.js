@@ -1,7 +1,7 @@
-import '../../buttons/buttonNormal/ButtonNormal.css'
+import './ButtonNormal.css'
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'
-import PopUp_ from '../../../layouts/popups/popup'
+import PopUp_ from '@components/layouts/popups/popup'
 import PropTypes from 'prop-types'
 
 function ButtonNormal({

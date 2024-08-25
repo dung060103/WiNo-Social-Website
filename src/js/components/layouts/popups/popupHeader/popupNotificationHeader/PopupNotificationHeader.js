@@ -1,19 +1,19 @@
 import { useEffect, useState, Fragment } from 'react'
 import './PopupNotificationHeader.css'
 import PopUpHeader from '../PopUpHeader'
-import ItemOpt from '../../../../parts/item/itemOpt/ItemOpt'
-import LabelCircle from '../../../../parts/labels/labelCircle/LabelCircle'
-import HeaderSpaceBetween from '../../../../parts/subHeaders/headerSpaceBetween/HeaderSpaceBetween'
-import ButtonNormal from '../../../../parts/buttons/buttonNormal/ButtonNormal'
-import { Icon_Circle } from '../../../../parts/icons/fontAwesome/FontAwesome'
+import ItemOpt from '@components/parts/item/itemOpt/ItemOpt'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
+import HeaderSpaceBetween from '@components/parts/subHeaders/headerSpaceBetween/HeaderSpaceBetween'
+import ButtonNormal from '@components/parts/buttons/buttonNormal/ButtonNormal'
+import { Icon_Circle } from '@components/parts/icons/fontAwesome/FontAwesome'
 import { Link } from 'react-router-dom'
-import { useStore } from '../../../../../store'
-import { set_url } from '../../../../../store/actions'
+import { useStore } from '@store'
+import { set_url } from '@store/actions'
 import {
   dateTo_textAgo,
   req_acceptAddNewFriend,
   req_refuse_requestAddFriend,
-} from '../../../../../store/functions'
+} from '@store/functions'
 import PropTypes from 'prop-types'
 
 /* eslint-disable no-unused-vars */

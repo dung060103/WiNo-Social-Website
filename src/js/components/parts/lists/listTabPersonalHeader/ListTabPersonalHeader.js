@@ -2,9 +2,9 @@ import TabPersonalHeader from '../../tabs/tabPersonalHeader/TabPersonalHeader'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { Context_PagePersonal } from '../../pages/pagePersonal/PagePersonal'
-import { useStore } from '../../../../store'
-import { set_url } from '../../../../store/actions'
-import { LIST_TAB_HEADER_PERSONAL_DEFAULT } from '../../../../store/constants'
+import { useStore } from '@store'
+import { set_url } from '@store/actions'
+import { LIST_TAB_HEADER_PERSONAL_DEFAULT } from '@store/constants'
 /* eslint-disable no-unused-vars */
 function ListTabPersonalHeader() {
   const value_Context_PagePersonal = useContext(Context_PagePersonal)

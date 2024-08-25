@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import LabelCircleStyles from '../labelCircle/LabelCircle.module.css'
 import { createContext } from 'react'
 import { Icon_Close } from '../../icons/fontAwesome/FontAwesome'
-import { SIZE_TINY } from '../../../../store/constants'
+import { SIZE_TINY } from '@store/constants'
 import PropTypes from 'prop-types'
 
 export const CreateContext = createContext()

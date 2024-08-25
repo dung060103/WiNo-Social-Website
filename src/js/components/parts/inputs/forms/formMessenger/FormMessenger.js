@@ -1,30 +1,30 @@
 import '../formMessenger/FormMessenger.css'
-import * as IconFontAwesome from '../../../icons/fontAwesome/FontAwesome'
+import * as IconFontAwesome from '@components/parts/icons/fontAwesome/FontAwesome'
 import { StrictMode, useContext, useEffect, useRef, useState } from 'react'
 import {
   beTyping_chat,
   Context_Message,
   noTyping_chat,
-} from '../../../../layouts/popups/popupMessenger/PopUpMessenger'
-import { contentPopUpMessenger } from '../../../../layouts/popups/popupMessenger/PopUpMessenger'
-import { content_sessionMessage } from '../../../../layouts/popups/popupMessenger/PopUpMessenger'
-import * as IconMUI from '../../../../parts/icons/iconMUI/IconMUI'
-import { Icon_Image } from '../../../icons/fontAwesome/FontAwesome'
-import LabelSquare from '../../../labels/labelSquare/LabelSquare'
-import LabelCircle from '../../../labels/labelCircle/LabelCircle'
+} from '@components/layouts/popups/popupMessenger/PopUpMessenger'
+import { contentPopUpMessenger } from '@components/layouts/popups/popupMessenger/PopUpMessenger'
+import { content_sessionMessage } from '@components/layouts/popups/popupMessenger/PopUpMessenger'
+import * as IconMUI from '@components/parts/icons/iconMUI/IconMUI'
+import { Icon_Image } from '@components/parts/icons/fontAwesome/FontAwesome'
+import LabelSquare from '@components/parts/labels/labelSquare/LabelSquare'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
 import {
   FILE_AUDIO,
   FILE_DOCUMENT,
   FILE_IMAGE,
   FILE_VIDEO,
-} from '../../../../../store/constants'
-import { useStore } from '../../../../../store'
-import PopUp_ from '../../../../layouts/popups/popup'
+} from '@store/constants'
+import { useStore } from '@store'
+import PopUp_ from '@components/layouts/popups/popup'
 import { Grid } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
-import PickerEmoji from '../../../pickers/pickerEmoji/PickerEmoji'
+import PickerEmoji from '@components/parts/pickers/pickerEmoji/PickerEmoji'
 import PropTypes from 'prop-types'
-import { createRequest } from '../../../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 /* eslint-disable no-unused-vars */
 function FormMessenger({ idChat }) {

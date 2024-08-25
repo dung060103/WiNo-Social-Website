@@ -10,7 +10,7 @@ import {
   Switch,
 } from '@mui/material'
 import { AccountBox, ModeNight, Person, Settings } from '@mui/icons-material'
-import { useStore } from '../../../../store'
+import { useStore } from '@store'
 import PropTypes from 'prop-types'
 /* eslint-disable no-unused-vars */
 export default function Sidebar({ mode, setMode, isShowTittle }) {

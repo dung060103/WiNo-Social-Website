@@ -1,32 +1,29 @@
 import PopUpHeader from '../PopUpHeader'
-import HeaderSpaceBetween from '../../../../parts/subHeaders/headerSpaceBetween/HeaderSpaceBetween'
-import Link_ from '../../../../parts/links/link/Link'
+import HeaderSpaceBetween from '@components/parts/subHeaders/headerSpaceBetween/HeaderSpaceBetween'
+import Link_ from '@components/parts/links/link/Link'
 import FormSearch, {
   NoResult,
-} from '../../../../parts/inputs/forms/formSearch/FormSearch'
+} from '@components/parts/inputs/forms/formSearch/FormSearch'
 import {
   Icon_Circle,
   Icon_Pen_Square,
   Icon_Plus,
   Icon_Square,
   Icon_Square_Check,
-} from '../../../../parts/icons/fontAwesome/FontAwesome'
-import ItemOpt from '../../../../parts/item/itemOpt/ItemOpt'
-import LabelCircle from '../../../../parts/labels/labelCircle/LabelCircle'
-import { useStore } from '../../../../../store'
-import { actions } from '../../../../../store'
+} from '@components/parts/icons/fontAwesome/FontAwesome'
+import ItemOpt from '@components/parts/item/itemOpt/ItemOpt'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
+import { useStore } from '@store'
+import { actions } from '@store'
 import PopUpMessenger from '../../popupMessenger/PopUpMessenger'
 import { useEffect, Fragment, useState } from 'react'
-import { dateTo_textAgo } from '../../../../../store/functions'
-import {
-  add_popup_review,
-  delete_pop_content,
-} from '../../../../../store/actions'
+import { dateTo_textAgo } from '@store/functions'
+import { add_popup_review, delete_pop_content } from '@store/actions'
 import PopUpReviews from '../../popupReview/PopUpReviews'
 import './PopupMessageHeader.css'
-import ButtonNormal from '../../../../parts/buttons/buttonNormal/ButtonNormal'
+import ButtonNormal from '@components/parts/buttons/buttonNormal/ButtonNormal'
 import PropTypes from 'prop-types'
-import { createRequest } from '../../../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 /* eslint-disable no-unused-vars */
 
 function PopupMessageHeader({ listChat = [] }) {

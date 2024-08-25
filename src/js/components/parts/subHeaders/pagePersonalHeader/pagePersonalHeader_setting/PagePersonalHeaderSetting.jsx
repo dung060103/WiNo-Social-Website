@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './PagePersonalHeaderSetting.css'
-import AccountAPI from '../../../../../API/AccountAPI'
-import { storage } from '../../../../../config/firebase'
+import AccountAPI from '@api/AccountAPI'
+import { storage } from '@config/firebase'
 import { Link } from 'react-router-dom'
 
 import {
@@ -13,12 +13,12 @@ import {
   Typography,
   Box,
 } from '@mui/material'
-import { useStore } from '../../../../../store'
+import { useStore } from '@store'
 import CloseIcon from '@mui/icons-material/Close'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import 'flatpickr/dist/themes/dark.css'
 import Flatpickr from 'react-flatpickr'
-import { set_data_account, set_url } from '../../../../../store/actions'
+import { set_data_account, set_url } from '@store/actions'
 function SettingUser() {
   const [state, dispatch] = useStore()
 

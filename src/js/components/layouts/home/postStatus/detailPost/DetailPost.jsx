@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './DetailPost.css'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
-import Users_Activity from '../../../../../API/UsersActivity'
-import Like from '../../../../../API/Like'
-import Comment from '../../../../../API/Comment'
+import Users_Activity from '@api/UsersActivity'
+import Like from '@api/Like'
+import Comment from '@api/Comment'
 import {
   ButtonGroup,
   Modal,
@@ -16,7 +16,7 @@ import {
   Box,
 } from '@mui/material'
 import { Navigate } from 'react-router-dom'
-import { useStore } from '../../../../../store'
+import { useStore } from '@store'
 import { Card, CardHeader, CardMedia } from '@mui/material'
 import { EmojiEmotions, Favorite, FavoriteBorder } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'

@@ -1,5 +1,5 @@
 import { io } from 'socket.io-client'
-import { SOCKET_SERVER } from '../config'
+import { SOCKET_SERVER } from '@config'
 import {
   ADD_FRIEND_ONLINE,
   ADD_POPUP_CALL_VIDEO,
