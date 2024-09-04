@@ -1,16 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import LogoWebsiteStyles from '../../logo/logoWebsite/LogoWebsite.module.css'
-function LogoWebsite()
-{
-    console.log(LogoWebsiteStyles);
-    return (
-        <Link to={'/'}>
-        <div className={LogoWebsiteStyles["container-logo_website"]}>
-            <div className={LogoWebsiteStyles["body-logo_website"]}>
-                <i className="fa-solid fa-radio"></i>
-            </div>
+function LogoWebsite() {
+  return (
+    <Link to={'/'}>
+      <div className={LogoWebsiteStyles['container-logo_website']}>
+        <div className={LogoWebsiteStyles['body-logo_website']}>
+          <i className="fa-solid fa-radio"></i>
         </div>
-        </Link>
-    )
+      </div>
+    </Link>
+  )
 }
-export default LogoWebsite;
+export default LogoWebsite

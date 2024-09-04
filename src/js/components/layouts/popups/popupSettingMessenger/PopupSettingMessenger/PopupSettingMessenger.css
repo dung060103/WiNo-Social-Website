@@ -1,71 +1,61 @@
-.container-popupSettingMessenger
-{
-    position: absolute;
-    left: 0;
-    transform: translateX(-100%);
-    top: 0;
+.container-popupSettingMessenger {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  top: 0;
 }
-.body-popupSettingMessenger
-{
-    margin-right: 10px;
-    background: var(--blackColorTextDefault);
-    color: var(--blackColorTextDefault) !important;
-    padding: 10px 20px;
-    border-radius: 10px;
+.body-popupSettingMessenger {
+  margin-right: 10px;
+  background: var(--blackColorTextDefault);
+  color: var(--blackColorTextDefault) !important;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
-.section-textareaEditNameChat
-{
-    width: 100%;
+.section-textareaEditNameChat {
+  width: 100%;
 }
-.section-textareaEditNameChat textarea
-{
-    width: 100%;
-    color: var(--greenColorHot) !important;
-    padding: 10px 20px;
-    border-radius: 10px;
-    outline: none;
-    resize: none;
+.section-textareaEditNameChat textarea {
+  width: 100%;
+  color: var(--greenColorHot) !important;
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+  resize: none;
 }
-.section-btnEditNameChat
-{
-    display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.section-btnEditNameChat {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
-.section_btnAddMembers,.section-btnChangeAvatarChat
-{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 10px;
+.section_btnAddMembers,
+.section-btnChangeAvatarChat {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
 }
-.section_selectedAddMembers
-{
-    display: flex;
+.section_selectedAddMembers {
+  display: flex;
 }
-.shortNameSelectedNewMember
-{
-    width: 100%;
-    text-align: center;
+.shortNameSelectedNewMember {
+  width: 100%;
+  text-align: center;
 }
-.item-NameSelectedNewMember
-{
-    width: 80px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.item-NameSelectedNewMember {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.section-changeAvatarChat
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.section-changeAvatarChat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.body-changeAvatarChat
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.body-changeAvatarChat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

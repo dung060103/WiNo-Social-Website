@@ -1,77 +1,70 @@
 .body-buttonNormal {
-    display: flex;
-    padding: 5px 10px;
-    border-radius: 10px;
-    background: var(--greenColorHot);
-    color: var(--greenColorBegin_Background);
-    cursor: pointer;
-    align-items: center;
-    font-size: 20px;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: var(--greenColorHot);
+  color: var(--greenColorBegin_Background);
+  cursor: pointer;
+  align-items: center;
+  font-size: 20px;
 }
-.body-buttonNormal.isNo{
-    color: var(--greenColorHot);
-    background: var(--greenColorBegin_Background);
-    border: 2px solid var(--greenColorHot);
+.body-buttonNormal.isNo {
+  color: var(--greenColorHot);
+  background: var(--greenColorBegin_Background);
+  border: 2px solid var(--greenColorHot);
 }
-.body-buttonNormal.disenable
-{
-    cursor: not-allowed ;
-    opacity: 0.6;
+.body-buttonNormal.disenable {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 .container-buttonNormal {
-    width: max-content;
-    height: max-content;
-    margin-right: 5px;
-    margin-bottom: 5px;
+  width: max-content;
+  height: max-content;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 .sectionText-buttonNormal {
-    /* margin-left: 8px; */
+  /* margin-left: 8px; */
 }
-.body-micRecorderMess
-{
-    display: flex;
-    align-items: center;
+.body-micRecorderMess {
+  display: flex;
+  align-items: center;
 }
-.timeline-micRecorderMess
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    border: 1px solid var(--blackColorTextDefault);
-    border-radius: 10px;
-    align-items: center;
-    position: relative;
-    min-height: 40px;
-    height: 40px;
+.timeline-micRecorderMess {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 1px solid var(--blackColorTextDefault);
+  border-radius: 10px;
+  align-items: center;
+  position: relative;
+  min-height: 40px;
+  height: 40px;
 }
-.lineStatus-micRecorderMess
-{
-    height: 100%;
-    background: var(--greenColorHot);
-    border-radius: 10px;
-    transition: .01s;
-    opacity: 0.5;
+.lineStatus-micRecorderMess {
+  height: 100%;
+  background: var(--greenColorHot);
+  border-radius: 10px;
+  transition: 0.01s;
+  opacity: 0.5;
 }
-.btnStop-micRecorderMess
-{
-    position: absolute;
-    box-shadow: 1px 1px 1px 1px var(--greenColorEnd_Background);
-    background: var(--greenColorEnd_Background);
-    margin-left: 10px;
+.btnStop-micRecorderMess {
+  position: absolute;
+  box-shadow: 1px 1px 1px 1px var(--greenColorEnd_Background);
+  background: var(--greenColorEnd_Background);
+  margin-left: 10px;
 }
-.numberTime-micRecorderMess
-{
-    position: absolute;
-    right: 10px;
-    background: var(--greenColorHot);
-    color: var(--greenColorEnd_Background);
-    padding: 5px 5px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 8px 3px;
+.numberTime-micRecorderMess {
+  position: absolute;
+  right: 10px;
+  background: var(--greenColorHot);
+  color: var(--greenColorEnd_Background);
+  padding: 5px 5px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 8px 3px;
 }
-.contentLeft-micRecorderMess
-{
-display: flex;
-    flex: 1 1;
-    align-items: center;
+.contentLeft-micRecorderMess {
+  display: flex;
+  flex: 1 1;
+  align-items: center;
 }

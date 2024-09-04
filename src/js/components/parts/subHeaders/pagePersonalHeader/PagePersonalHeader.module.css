@@ -1,46 +1,41 @@
 .container-pagePersonalHeader {
-    width: 100%;
-    height: max-content;
-    /* background: gray; */
-    padding: 0 100px;
+  width: 100%;
+  height: max-content;
+  /* background: gray; */
+  padding: 0 100px;
 }
 .partOverImage-pagePersonalHeader {
-    width: 100%;
-    height: 350px;
-    border-radius: 10px;
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
 }
-.partMain-pagePersonalHeader .container-labelCircle
-{
-    margin-top: -50px;
+.partMain-pagePersonalHeader .container-labelCircle {
+  margin-top: -50px;
 }
 .partMain-pagePersonalHeader {
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 }
 .containerBtn-pagePersonalHeader {
-    display: flex;
-    position: absolute;
-    right: 0;
-    top: 5px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 5px;
 }
 .containerName-pagePersonalHeader {
-    height: max-content;
-    margin-top: 10px;
+  height: max-content;
+  margin-top: 10px;
 }
 .partLisTab-pagePersonalHeader {
-    display: flex;
+  display: flex;
 }
-.containerBtn-pagePersonalHeader .itemPopUp:not(:first-child)
-{
-    margin-top: 10px;
+.containerBtn-pagePersonalHeader .itemPopUp:not(:first-child) {
+  margin-top: 10px;
 }
-.containerBtn-pagePersonalHeader .itemPopUp
-{
-    transform: translateX(0);
-
+.containerBtn-pagePersonalHeader .itemPopUp {
+  transform: translateX(0);
 }
-.containerBtn-pagePersonalHeader .itemPopUp:hover
-{
-    transition: .25s;
-    transform: translateX(5px);
+.containerBtn-pagePersonalHeader .itemPopUp:hover {
+  transition: 0.25s;
+  transform: translateX(5px);
 }

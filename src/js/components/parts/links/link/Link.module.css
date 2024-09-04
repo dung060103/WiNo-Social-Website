@@ -1,12 +1,8 @@
-.main_link
-{
-    cursor: pointer;
+.main_link {
+  cursor: pointer;
 }
-.text_link
-{
-
+.text_link {
 }
-.isUnderline
-{
-    text-decoration: underline;
+.isUnderline {
+  text-decoration: underline;
 }

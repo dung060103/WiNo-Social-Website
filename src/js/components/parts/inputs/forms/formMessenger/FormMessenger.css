@@ -1,66 +1,57 @@
-.contentLeft-formMessenger
-{
-    display: flex;
-    align-items: center;
+.contentLeft-formMessenger {
+  display: flex;
+  align-items: center;
 }
-.contentCenter-formMessenger
-{
-    width: 1px;
-    flex-grow: 1;
+.contentCenter-formMessenger {
+  width: 1px;
+  flex-grow: 1;
 }
-.section-iptText_formMessenger
-{
-    display: flex;
-    border: 1px solid var(--greenColorHot);
-    border-radius: 6px;
-    justify-content: space-between;
-    align-items: center;
+.section-iptText_formMessenger {
+  display: flex;
+  border: 1px solid var(--greenColorHot);
+  border-radius: 6px;
+  justify-content: space-between;
+  align-items: center;
 }
-.iptText-formMessenger
-{
-    background: transparent;
-    outline: none;
-    border: none;
-    color: var(--blackColorTextDefault);
-    padding: 5px 10px;
-    resize: none;
-    flex: 1;
-    font-size: 20px;
-}.iptText-formMessenger::placeholder
-{
-    color: var(--blackColorTextDefault);
+.iptText-formMessenger {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: var(--blackColorTextDefault);
+  padding: 5px 10px;
+  resize: none;
+  flex: 1;
+  font-size: 20px;
 }
-.iptFile-formMessenger
-{
-    padding: 20px 5px;
-    display: flex;
-    overflow-x: scroll;
-    
+.iptText-formMessenger::placeholder {
+  color: var(--blackColorTextDefault);
 }
-.mess_be_typing
-{
-    /* position: absolute;
+.iptFile-formMessenger {
+  padding: 20px 5px;
+  display: flex;
+  overflow-x: scroll;
+}
+.mess_be_typing {
+  /* position: absolute;
     top: -60px;
     left: 6px; */
-    display: flex;
-    align-items: center;
-    width: max-content;
-    height: max-content;
-
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: max-content;
 }
 .mess_be_typing .gif-typing {
-    object-fit: cover;
-    /* transform: scale(0.2); */
-    width: 50px;
-    box-shadow: -8px 0px 16px -1px var(--greenColorBegin_Background);
-    height: 50px;
-    border-radius: 4px;
+  object-fit: cover;
+  /* transform: scale(0.2); */
+  width: 50px;
+  box-shadow: -8px 0px 16px -1px var(--greenColorBegin_Background);
+  height: 50px;
+  border-radius: 4px;
 }
-.body-pickerGif .giphy-grid
-{
-    width: 370px;
-    /* height: 85%; */
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex: 1;
+.body-pickerGif .giphy-grid {
+  width: 370px;
+  /* height: 85%; */
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
 }

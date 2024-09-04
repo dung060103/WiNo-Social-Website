@@ -1,13 +1,11 @@
 @import url('../../../../../../node_modules/emoji-picker-react/dist/main.css');
-.emoji-picker-react input.emoji-search
-{ 
-background-color: transparent;
+.emoji-picker-react input.emoji-search {
+  background-color: transparent;
 }
-.emoji-picker-react .emoji-group:before
-{
-    background: var(--greenColorBegin_Background);
-    color: var(--greenColorHot) !important;
-    padding: 0px 25px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px  var(--greenColorBegin_Background);
+.emoji-picker-react .emoji-group:before {
+  background: var(--greenColorBegin_Background);
+  color: var(--greenColorHot) !important;
+  padding: 0px 25px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px var(--greenColorBegin_Background);
 }

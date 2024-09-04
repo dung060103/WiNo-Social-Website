@@ -1,44 +1,40 @@
-
-.previewPostCard{
-
-
+.previewPostCard {
 }
-.previewPostCard>svg{
+.previewPostCard > svg {
   /* cursor: pointer;
   border-radius: 20px;
   background-color: wheat; */
-
 }
 
 /* CSS show view img before post  */
-  .previewImage{
-    margin-top: 10px;
-    position: relative;
+.previewImage {
+  margin-top: 10px;
+  position: relative;
 }
 
-.previewImage>svg{
-    position: absolute;
-    right: 1rem;
-    top: 0.5rem;
-    cursor: pointer;
-    border-radius: 20px;
-    background-color: rgb(221, 221, 221);
+.previewImage > svg {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: rgb(221, 221, 221);
 }
 
-.previewImage>img{
-    width: 100%;
-    max-height: 20rem;
-    object-fit: cover;
-    border-radius: 1rem;
+.previewImage > img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 /* CSS show view and select moji before post  */
 
-.previewMoji{
+.previewMoji {
   position: absolute;
   z-index: 1;
 }
-.previewMoji>svg{
+.previewMoji > svg {
   position: absolute;
   right: 0.3rem;
   top: 0.3rem;

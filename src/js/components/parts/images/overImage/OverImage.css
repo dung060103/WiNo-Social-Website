@@ -1,12 +1,10 @@
-.container-overImage
-{
-    width: 100%;
-    height: 100%;
-    background:aqua;
+.container-overImage {
+  width: 100%;
+  height: 100%;
+  background: aqua;
 }
-.img-overImage
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.img-overImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

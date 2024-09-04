@@ -1,23 +1,20 @@
-.container-formSearch
-{
-    display: flex;
-    align-items: center;
+.container-formSearch {
+  display: flex;
+  align-items: center;
 }
 .ipt-search__formSearch {
-    width: 100%;
-    background: transparent;
-    outline: none;
-    border: 0;
-    border-radius: 7px;
-    font-size: 25px;
-    color: var(--greenColorHot);
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: 0;
+  border-radius: 7px;
+  font-size: 25px;
+  color: var(--greenColorHot);
 }
-.ipt-search__formSearch::placeholder
-{
-    color: var(--greenColorHot);
-
+.ipt-search__formSearch::placeholder {
+  color: var(--greenColorHot);
 }
 .container-ipt_search__formSearch {
-    width: 100%;
-    margin-left: 10px;
+  width: 100%;
+  margin-left: 10px;
 }

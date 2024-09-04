@@ -8,11 +8,10 @@
   padding-top: 60px;
   max-height: 100vh;
   overflow-y: auto;
-  }
-
-  @media screen and (max-width: 924px) {
-    .widgets {
-        display: none;
-    }
 }
-  
+
+@media screen and (max-width: 924px) {
+  .widgets {
+    display: none;
+  }
+}

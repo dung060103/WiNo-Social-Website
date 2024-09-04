@@ -1,9 +1,6 @@
-.container-logo_website
-{
-
+.container-logo_website {
 }
-.body-logo_website i
-{
-    font-size: 50px;
-    color: var(--greenColorHot);
+.body-logo_website i {
+  font-size: 50px;
+  color: var(--greenColorHot);
 }

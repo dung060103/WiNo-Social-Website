@@ -1,11 +1,11 @@
-import OverImage from "../../images/overImage/OverImage";
-import LabelCircle from "../../labels/labelCircle/LabelCircle";
-import NamePersonal from "../../names/namePersonal/NamePersonal";
-import ShortInfoPersonal from "../../shorts/shortInfo/shortInfoPersonal/ShortInfoPersonal";
-import PagePersonalHeaderStyles from "../pagePersonalHeader/PagePersonalHeader.module.css";
-import ButtonNormal from "../../buttons/buttonNormal/ButtonNormal";
-import ListTabPersonalHeader from "../../lists/listTabPersonalHeader/ListTabPersonalHeader";
-import { useStore } from "../../../../store";
+import OverImage from '../../images/overImage/OverImage'
+import LabelCircle from '../../labels/labelCircle/LabelCircle'
+import NamePersonal from '../../names/namePersonal/NamePersonal'
+import ShortInfoPersonal from '../../shorts/shortInfo/shortInfoPersonal/ShortInfoPersonal'
+import PagePersonalHeaderStyles from '../pagePersonalHeader/PagePersonalHeader.module.css'
+import ButtonNormal from '../../buttons/buttonNormal/ButtonNormal'
+import ListTabPersonalHeader from '../../lists/listTabPersonalHeader/ListTabPersonalHeader'
+import { useStore } from '@store'
 import {
   Icon_AddPerson,
   Icon_Circle_Plus,
@@ -17,58 +17,52 @@ import {
   Icon_Question,
   Icon_Square_Check,
   Icon_Unfriend,
-} from "../../icons/fontAwesome/FontAwesome";
-import { Fragment, useContext, useEffect, useState } from "react";
-import { Context_Account } from "../../../../store/Context";
-import { HOST_SERVER } from "../../../../config";
-import { json } from "react-router";
-import ItemOpt from "../../item/itemOpt/ItemOpt";
+} from '../../icons/fontAwesome/FontAwesome'
+import { Fragment, useEffect } from 'react'
+import ItemOpt from '../../item/itemOpt/ItemOpt'
 import {
-   req_acceptAddNewFriend,
+  req_acceptAddNewFriend,
   req_refuse_requestAddFriend,
-  req_remove_requestAddFriend,
+  cancelRequestAddFriend,
   req_requestAddFriend,
   req_unfriend,
-} from "../../../../store/functions";
-import { set_data_account } from "../../../../store/actions";
-import { req_getDetailChat } from "../../../layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader";
-
-
-import { Link } from 'react-router-dom';
+} from '@store/functions'
+import { set_data_account } from '@store/actions'
+import { createBoxChat } from '@components/layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function PagePersonalHeader({ stateAccount }) {
-  var [state, dispatch] = useStore();
-  var account = stateAccount;
+  var [state, dispatch] = useStore()
+  var account = stateAccount
   useEffect(() => {
-    console.log(`${state.account.slug_personal}_UPDATE_REQUEST_ADD_NEW_FRIEND`);
     state.socket.on(
       `${state.account.slug_personal}_UPDATE_REQUEST_ADD_NEW_FRIEND`,
       (dataAccount) => {
-        console.log(dataAccount);
-        dispatch(set_data_account(dataAccount));
+        dispatch(set_data_account(dataAccount))
         state.socket.off(
-          `${state.account.slug_personal}_UPDATE_REQUEST_ADD_NEW_FRIEND`
-        );
-      }
-    );
+          `${state.account.slug_personal}_UPDATE_REQUEST_ADD_NEW_FRIEND`,
+        )
+      },
+    )
     state.socket.on(
       `${state.account.slug_personal}_UPDATE_LIST_RESPONSE_NEW_FRIEND`,
       (dataAccount) => {
-        dispatch(set_data_account(dataAccount));
-      }
-    );
-  }, [state.account]);
+        dispatch(set_data_account(dataAccount))
+      },
+    )
+  }, [state.account])
   return (
-    <div className={PagePersonalHeaderStyles["container-pagePersonalHeader"]}>
+    <div className={PagePersonalHeaderStyles['container-pagePersonalHeader']}>
       <div
-        className={PagePersonalHeaderStyles["partOverImage-pagePersonalHeader"]}
+        className={PagePersonalHeaderStyles['partOverImage-pagePersonalHeader']}
       >
         <OverImage urlImage={account.cover_image} />
       </div>
-      <div className={PagePersonalHeaderStyles["partMain-pagePersonalHeader"]}>
+      <div className={PagePersonalHeaderStyles['partMain-pagePersonalHeader']}>
         <div
           className={
-            PagePersonalHeaderStyles["containerAvatar-pagePersonalHeader"]
+            PagePersonalHeaderStyles['containerAvatar-pagePersonalHeader']
           }
         >
           <LabelCircle
@@ -78,29 +72,27 @@ function PagePersonalHeader({ stateAccount }) {
         </div>
         <div
           className={
-            PagePersonalHeaderStyles["containerName-pagePersonalHeader"]
+            PagePersonalHeaderStyles['containerName-pagePersonalHeader']
           }
         >
           <NamePersonal
-            textName={account.user_fname + " " + account.user_lname}
+            textName={account.fname + ' ' + account.lname}
             elOfficial={<i className="fa-solid fa-circle-check"></i>}
           />
           <div
             className={
-              PagePersonalHeaderStyles["containerShortInfo-pagePersonalHeader"]
+              PagePersonalHeaderStyles['containerShortInfo-pagePersonalHeader']
             }
           >
-            {["14 million followers", "5 is following"].map((el, idx) => {
-              return (
-                <ShortInfoPersonal key={idx} textInfo={el} type={"link"} />
-              );
+            {['14 million followers', '5 is following'].map((el, idx) => {
+              return <ShortInfoPersonal key={idx} textInfo={el} type={'link'} />
             })}
           </div>
         </div>
 
         <div
           className={
-            PagePersonalHeaderStyles["containerBtn-pagePersonalHeader"]
+            PagePersonalHeaderStyles['containerBtn-pagePersonalHeader']
           }
         >
           <ButtonHeaderWithSlugPersonal
@@ -111,39 +103,37 @@ function PagePersonalHeader({ stateAccount }) {
         </div>
       </div>
       <div
-        className={PagePersonalHeaderStyles["partLisTab-pagePersonalHeader"]}
+        className={PagePersonalHeaderStyles['partLisTab-pagePersonalHeader']}
       >
-        <ListTabPersonalHeader
-        />
+        <ListTabPersonalHeader />
       </div>
     </div>
-  );
+  )
 }
 
 function ButtonHeaderWithSlugPersonal({ account, state, dispatch }) {
-  const [stateShowPopUpBtn, set_stateShowPopUpBtn] = useState([]);
-  var isMe = account.slug_personal == state.account.slug_personal;
+  var isMe = account.slug_personal == state.account.slug_personal
   var isFriend = state.account.list_slug_friend.some(
-    (slug_friend) => account.slug_personal == slug_friend
-  );
+    (slug_friend) => account.slug_personal == slug_friend,
+  )
   var isResponseFriend = state.account.list_response_new_friend.some(
-    (new_friend) => account.slug_personal == new_friend.slug_friend
-  );
+    (new_friend) => account.slug_personal == new_friend.slug_friend,
+  )
   var isRequestFriend = state.account.list_request_new_friend.some(
-    (new_friend) => account.slug_personal == new_friend.slug_friend
-  );
+    (new_friend) => account.slug_personal == new_friend.slug_friend,
+  )
 
   return isMe ? (
     <Fragment>
       <Link to={`/account/personal/${state.account.slug_personal}/setting`}>
-      <ButtonNormal
-        textBtn={"Edit information"}
-        elIcon={<Icon_Pen_Square isHot={false} />}
-        isNo={false}
-      />
+        <ButtonNormal
+          textBtn={'Edit information'}
+          elIcon={<Icon_Pen_Square isHot={false} />}
+          isNo={false}
+        />
       </Link>
       <ButtonNormal
-        textBtn={"Post story"}
+        textBtn={'Post story'}
         elIcon={<Icon_Circle_Plus />}
         isNo={true}
       />
@@ -152,91 +142,119 @@ function ButtonHeaderWithSlugPersonal({ account, state, dispatch }) {
     <Fragment>
       {isFriend ? (
         <ButtonNormal
-          textBtn={"Friend"}
+          textBtn={'Friend'}
           elIcon={<Icon_Friend isHot={false} />}
           isNo={false}
-          componentPopUP={
-              [<div
-                className={PagePersonalHeaderStyles["itemPopUp"]}
-                onClick={() => {
-                  req_unfriend(account);
-                  var tmp_account = state.account;
+          componentPopUP={[
+            <div
+              key={'Unfriend'}
+              className={PagePersonalHeaderStyles['itemPopUp']}
+              onClick={() => {
+                req_unfriend(account)
+                var tmp_account = state.account
 
-                  tmp_account.list_slug_friend.forEach((slug_friend, idx) => {
-                    if (slug_friend == account.slug_personal) {
-                      tmp_account.list_slug_friend.splice(idx, 1);
-                    }
-                  });
-                  dispatch(set_data_account(tmp_account));
-                }}
-              >
-                <ItemOpt
-                  component_Left={<Icon_Unfriend />}
-                  children_centerItemOpt={"Unfriend"}
-                />
-              </div>
-              ,<div className={PagePersonalHeaderStyles["itemPopUp"]}>
-                <ItemOpt
-                  component_Left={<Icon_Follow />}
-                  children_centerItemOpt={"Following"}
-                />
-              </div>]
-          }
+                tmp_account.list_slug_friend.forEach((slug_friend, idx) => {
+                  if (slug_friend == account.slug_personal) {
+                    tmp_account.list_slug_friend.splice(idx, 1)
+                  }
+                })
+                dispatch(set_data_account(tmp_account))
+              }}
+            >
+              <ItemOpt
+                component_Left={<Icon_Unfriend />}
+                children_centerItemOpt={'Unfriend'}
+              />
+            </div>,
+            <div
+              key={'Following'}
+              className={PagePersonalHeaderStyles['itemPopUp']}
+            >
+              <ItemOpt
+                component_Left={<Icon_Follow />}
+                children_centerItemOpt={'Following'}
+              />
+            </div>,
+          ]}
         />
       ) : isResponseFriend ? (
         <ButtonNormal
-          textBtn={"Response"}
+          textBtn={'Response'}
           elIcon={<Icon_Question isHot={false} />}
           isNo={false}
-          componentPopUP={
-            [<div className={PagePersonalHeaderStyles["itemPopUp"]}>
-            <ItemOpt
-              component_Left={<Icon_Square_Check />}
-              children_centerItemOpt={"Accept"}
-              handleClick={()=>{
-                req_acceptAddNewFriend(account)
-              }}
-            />
-          </div>
-          ,<div className={PagePersonalHeaderStyles["itemPopUp"]}>
-            <ItemOpt
-              component_Left={<Icon_Close />}
-              children_centerItemOpt={"Refuse"}
-              handleClick={()=>{
-                req_refuse_requestAddFriend(account);
-              }}
-            />
-          </div>]
-          }
+          componentPopUP={[
+            <div
+              key={'Accept'}
+              className={PagePersonalHeaderStyles['itemPopUp']}
+            >
+              <ItemOpt
+                component_Left={<Icon_Square_Check />}
+                children_centerItemOpt={'Accept'}
+                handleClick={() => {
+                  req_acceptAddNewFriend(account)
+                }}
+              />
+            </div>,
+            <div
+              key={'Refuse'}
+              className={PagePersonalHeaderStyles['itemPopUp']}
+            >
+              <ItemOpt
+                component_Left={<Icon_Close />}
+                children_centerItemOpt={'Refuse'}
+                handleClick={() => {
+                  req_refuse_requestAddFriend(account)
+                }}
+              />
+            </div>,
+          ]}
         />
       ) : isRequestFriend ? (
         <ButtonNormal
           handleClick={() => {
-            req_remove_requestAddFriend(account);
+            cancelRequestAddFriend(account)
           }}
-          textBtn={"Cancel Request"}
+          textBtn={'Cancel Request'}
           elIcon={<Icon_Question isHot={false} />}
           isNo={false}
         />
       ) : (
         <ButtonNormal
           handleClick={() => {
-            req_requestAddFriend(account);
+            req_requestAddFriend(account)
           }}
-          textBtn={"Add friend"}
+          textBtn={'Add friend'}
           elIcon={<Icon_AddPerson isHot={false} />}
           isNo={false}
         />
       )}
-      <ButtonNormal textBtn={"Chatting"} elIcon={<Icon_Mess />} isNo={true} 
-      handleClick={()=>{
-        req_getDetailChat({
-          data_Chat_id:account.id_chatPersonalPage,
-          dispatch,state
-        })
-      }}
+      <ButtonNormal
+        textBtn={'Chatting'}
+        elIcon={<Icon_Mess />}
+        isNo={true}
+        handleClick={() => {
+          const members = [account.slug_personal, state.account.slug_personal]
+
+          createBoxChat({
+            data_Chat_id: account.id_chatPersonalPage,
+            dispatch,
+            state,
+            members,
+          })
+        }}
       />
     </Fragment>
-  );
+  )
 }
-export default PagePersonalHeader;
+
+PagePersonalHeader.propTypes = {
+  stateAccount: PropTypes.object.isRequired,
+}
+
+ButtonHeaderWithSlugPersonal.propTypes = {
+  account: PropTypes.object.isRequired,
+  state: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+}
+
+export default PagePersonalHeader

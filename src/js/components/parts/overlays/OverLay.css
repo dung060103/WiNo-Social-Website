@@ -1,15 +1,12 @@
-.container-overLay
-{
-
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.container-overLay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
-.body-overLay
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.body-overLay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

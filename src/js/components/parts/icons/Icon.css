@@ -1,20 +1,17 @@
-.icon_web
-{
-    padding: 2px 4px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: inherit;
-    width: max-content;
-    height: max-content;
+.icon_web {
+  padding: 2px 4px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: inherit;
+  width: max-content;
+  height: max-content;
 }
-.icon_web.isHot
-{
-    color: var(--greenColorHot);
+.icon_web.isHot {
+  color: var(--greenColorHot);
 }
-.icon_web.SMALL
-{
-    font-size: 20px !important;
+.icon_web.SMALL {
+  font-size: 20px !important;
 }

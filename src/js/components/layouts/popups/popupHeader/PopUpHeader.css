@@ -1,37 +1,32 @@
-.main-PopUpHeader
-{
-    position: absolute;
-    background: var(--greenColorEnd_Background);
-    border-radius: 10px;
-    min-width: 500px;
-    min-height: 420px;
-    top: 0;
-    right: 10px;
-    margin: 10px;
-    border: 1px solid var(--greenColorHot);
-    color: var(--greenColorHot);
-    padding: 5px 10px;
+.main-PopUpHeader {
+  position: absolute;
+  background: var(--greenColorEnd_Background);
+  border-radius: 10px;
+  min-width: 500px;
+  min-height: 420px;
+  top: 0;
+  right: 10px;
+  margin: 10px;
+  border: 1px solid var(--greenColorHot);
+  color: var(--greenColorHot);
+  padding: 5px 10px;
 }
-.footer-PopUpHeader
-{
-    width: 100%;
-    height: max-content;
-    min-height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
+.footer-PopUpHeader {
+  width: 100%;
+  height: max-content;
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
 }
-.header-PopUpHeader
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.header-PopUpHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.body-PopUpHeader
-{
-    overflow-y: auto;
-    height: 420px;
-
+.body-PopUpHeader {
+  overflow-y: auto;
+  height: 420px;
 }

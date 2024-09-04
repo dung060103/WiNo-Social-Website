@@ -1,36 +1,25 @@
-import { HOST_SERVER } from '../config';
-import axios from 'axios';
+import { createRequest } from '@utils/requests'
 
 const Favorite = {
+  getAllFavorite: async (id) => {
+    const path = '/favorite/:id'
+    return await createRequest('GET', path, { query: { id } })
+  },
 
-    get_all_favorite: async(id) => {
-        const url = `${HOST_SERVER}/favorite/${id}`
-        var data = await fetch(url, {method:'GET'}).then(res=>res.json());
-        return data ;
-    },
+  postFavorite: async (query) => {
+    const path = '/favorite'
+    return await createRequest('POST', path, { query })
+  },
 
-    post_Favorite: async(query) => {
-        const url = `${HOST_SERVER}/favorite/${query}`
-        var data = await fetch(url, {method:'POST'}).then(res=>res.json());
-        return data ;
-    },
+  deleteFavorite: async (query) => {
+    const path = '/favorite'
+    return await createRequest('DELETE', path, { query })
+  },
 
-    delete_Favorite:(query) => {
-        const url = `${HOST_SERVER}/favorite/${query}`
-        var data =  axios.delete(url,).then(function (res) {
-            console.log(res);
-        });
-        return data ;
-    },
-
-    put_Favorite: (query) => {
-        const url = `${HOST_SERVER}/favorite/${query}`
-        var data =  axios.put(url,).then(function (res) {
-            console.log(res);
-        });
-        return data ;
-    },
-
+  putFavorite: async (query) => {
+    const path = '/favorite'
+    return await createRequest('PUT', path, { query })
+  },
 }
 
 export default Favorite

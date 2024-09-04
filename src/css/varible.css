@@ -1,8 +1,8 @@
-:root{
-    --blueColorMain:#00e4d3;
-    --greenColorEnd_Background:#d8f3dc;
-    --greenColorBegin_Background:white;
-    --greenColorHot:#1dd05d;
-    --blackColorTextDefault: #054a29;
-    --blackLayout:#2e3f44d9
+:root {
+  --blueColorMain: #00e4d3;
+  --greenColorEnd_Background: #d8f3dc;
+  --greenColorBegin_Background: white;
+  --greenColorHot: #1dd05d;
+  --blackColorTextDefault: #054a29;
+  --blackLayout: #2e3f44d9;
 }

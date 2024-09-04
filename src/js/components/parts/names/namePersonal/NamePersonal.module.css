@@ -1,21 +1,21 @@
 .container-namePersonal {
-    font-weight: bold;
-    font-size: 30px;
+  font-weight: bold;
+  font-size: 30px;
 }
 .main-namePersonal {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .body-namePersonal {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 .containerOfficial-namePersonal {
-    font-size: 20px;
-    color: var(--greenColorHot);
-    background: var(--greenColorBegin_Background);
-    background-clip: content-box;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
+  font-size: 20px;
+  color: var(--greenColorHot);
+  background: var(--greenColorBegin_Background);
+  background-clip: content-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
 }

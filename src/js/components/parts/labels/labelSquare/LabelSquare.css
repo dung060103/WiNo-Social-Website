@@ -1,60 +1,51 @@
-.body-labelSquare.MEDIUM img
-{
-    width: 100px;
-    display: flex;
-    height: 100px;
-    object-fit: cover;
+.body-labelSquare.MEDIUM img {
+  width: 100px;
+  display: flex;
+  height: 100px;
+  object-fit: cover;
 }
-.body-labelSquare
-{
-    display: flex;
-    position: relative;
-    width: max-content;
-    height: max-content;
+.body-labelSquare {
+  display: flex;
+  position: relative;
+  width: max-content;
+  height: max-content;
 }
-.body-labelSquare.SMALL
-{
-    width: 50px;
-    height: 50px;
+.body-labelSquare.SMALL {
+  width: 50px;
+  height: 50px;
 }
-.sub-labelSquare
-{
-    position: absolute;
-    top: -20px;
-    right: -20px;
+.sub-labelSquare {
+  position: absolute;
+  top: -20px;
+  right: -20px;
 }
-.body-labelSquare{
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px green;
-    cursor: pointer;
+.body-labelSquare {
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px green;
+  cursor: pointer;
 }
-.container-labelSquare:not(:first-child)
-{
-    margin-left: 20px;
+.container-labelSquare:not(:first-child) {
+  margin-left: 20px;
 }
- .body-labelSquare .icon-labelSquare
- {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center
- }
- .body-labelSquare.isBorderRadius .video-labelSquare video
- , .body-labelSquare.isBorderRadius .img-labelSquare img
- {
-    border-radius: 10px;
- }
- .body-labelSquare .video-labelSquare
- ,.body-labelSquare .img-labelSquare
-{
-    width: 100%;
-    height: 100%;
+.body-labelSquare .icon-labelSquare {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- .body-labelSquare .video-labelSquare video
-, .body-labelSquare .img-labelSquare img
- {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
- }
+.body-labelSquare.isBorderRadius .video-labelSquare video,
+.body-labelSquare.isBorderRadius .img-labelSquare img {
+  border-radius: 10px;
+}
+.body-labelSquare .video-labelSquare,
+.body-labelSquare .img-labelSquare {
+  width: 100%;
+  height: 100%;
+}
+.body-labelSquare .video-labelSquare video,
+.body-labelSquare .img-labelSquare img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

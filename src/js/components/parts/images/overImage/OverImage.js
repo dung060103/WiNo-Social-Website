@@ -1,12 +1,15 @@
 import '../../images/overImage/OverImage.css'
-function OverImage({
-    urlImage=''
-})
-{
-    return (
-        <div className="container-overImage">
-        <img className='img-overImage' src={urlImage} alt="" />
-        </div>
-    )
+import PropTypes from 'prop-types'
+
+function OverImage({ urlImage = '' }) {
+  return (
+    <div className="container-overImage">
+      <img className="img-overImage" src={urlImage} alt="" />
+    </div>
+  )
 }
-export default OverImage;
+
+OverImage.propTypes = {
+  urlImage: PropTypes.string,
+}
+export default OverImage

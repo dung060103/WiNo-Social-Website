@@ -1,17 +1,14 @@
-.container-tabPersonalHeader
-{
-    margin: 0 5px;
+.container-tabPersonalHeader {
+  margin: 0 5px;
 }
-.body-tabPersonalHeader
-{
-    padding: 5px 10px;
-    background: var(--greenColorBegin_Background);
-    color: var(--greenColorHot);
-    border-radius: 5px;
-    cursor: pointer;
+.body-tabPersonalHeader {
+  padding: 5px 10px;
+  background: var(--greenColorBegin_Background);
+  color: var(--greenColorHot);
+  border-radius: 5px;
+  cursor: pointer;
 }
-.body-tabPersonalHeader.active
-{
-    background: var(--greenColorHot);;
-    color: var(--greenColorBegin_Background);
+.body-tabPersonalHeader.active {
+  background: var(--greenColorHot);
+  color: var(--greenColorBegin_Background);
 }

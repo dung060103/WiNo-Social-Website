@@ -1,134 +1,115 @@
-.container-popupCallVideo{
-    background: var(--blackLayout);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 4;
-
-
+.container-popupCallVideo {
+  background: var(--blackLayout);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 4;
 }
-.container-popupCallVideo[data-isRefuse='true']
-{
-    display: none;
+.container-popupCallVideo[data-isRefuse='true'] {
+  display: none;
 }
-.container-popupCallVideo[data-isRefuse='true']
-{
-    display: block;
+.container-popupCallVideo[data-isRefuse='true'] {
+  display: block;
 }
-.body-popupCallVideo
-{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 4;
-    display: flex;
-    box-shadow: 1px 1px 18px 1px var(--blackLayout);
-    min-height: 180px;
-    border-radius: 4px;
-    background: var(--blackLayout);
-    padding: 10px 20px;
+.body-popupCallVideo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 4;
+  display: flex;
+  box-shadow: 1px 1px 18px 1px var(--blackLayout);
+  min-height: 180px;
+  border-radius: 4px;
+  background: var(--blackLayout);
+  padding: 10px 20px;
 }
-.body-popupCallVideo.isZoomIn{
-    width: 100vw;
-    height: 100vh;
+.body-popupCallVideo.isZoomIn {
+  width: 100vw;
+  height: 100vh;
 }
-.sidebarRight-popupCallVideo
-{
-position: absolute;
-    bottom: 0;
-    right: 5px;
-    width: max-content;
-    height: 100%;
-    padding-right: 10px;
+.sidebarRight-popupCallVideo {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  width: max-content;
+  height: 100%;
+  padding-right: 10px;
 }
-.video-popupCallVideo
-{
-    border-radius: 4px;
-    /* min-width: 500px;
+.video-popupCallVideo {
+  border-radius: 4px;
+  /* min-width: 500px;
     min-height: 500px; */
-    width: 700px;
-    /* height: 500px; */
+  width: 700px;
+  /* height: 500px; */
 }
-.video-popupCallVideo.isZoomIn
-{
-    width: 100vw;
-    height: 100vh;
+.video-popupCallVideo.isZoomIn {
+  width: 100vw;
+  height: 100vh;
 }
-.section-infoShortCallVideo
-{
-    position: absolute;
-    left: 10px;
-    top: 10px;
-
-    
+.section-infoShortCallVideo {
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
-.body-infoShortCallVideo
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--blackLayout);
-    padding: 5px 10px;
-    border-radius: 4px;
-    color: var(--greenColorEnd_Background);
+.body-infoShortCallVideo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blackLayout);
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: var(--greenColorEnd_Background);
 }
 .item-joinerCallVideo {
-
 }
 
-.section-joiner
-{
-
+.section-joiner {
 }
 
-.section-btnCoreCallVideo
-{
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    justify-content: center;
+.section-btnCoreCallVideo {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  justify-content: center;
 }
-.btn-zoomInScreenCallVideo,.btn-zoomOutScreenCallVideo
-{
-    border-radius: 10px;
-    padding: 6px 14px;
-    background: var(--blackLayout);
-    width: max-content;
-    color: white;
-    font-size: 20px;
-    height: max-content;
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-    z-index: 2;
+.btn-zoomInScreenCallVideo,
+.btn-zoomOutScreenCallVideo {
+  border-radius: 10px;
+  padding: 6px 14px;
+  background: var(--blackLayout);
+  width: max-content;
+  color: white;
+  font-size: 20px;
+  height: max-content;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 2;
 }
-.btn_turnoffCallVideo
-{
-    border-radius: 10px;
-    padding: 6px 14px;
-    background: red;
-    width: max-content;
-    color: white;
-    font-size: 20px;
-    height: max-content;
-    cursor: pointer;
+.btn_turnoffCallVideo {
+  border-radius: 10px;
+  padding: 6px 14px;
+  background: red;
+  width: max-content;
+  color: white;
+  font-size: 20px;
+  height: max-content;
+  cursor: pointer;
 }
-.item-SubCameraCallVideo video
-{
-    width: 200px;
-    /* position: absolute;
+.item-SubCameraCallVideo video {
+  width: 200px;
+  /* position: absolute;
     bottom: 10px;
     right: 10px;
     border-radius: 4px; */
-}   
-.body-notification_callVideo{
-    display: flex;
-    justify-content: center;
-
+}
+.body-notification_callVideo {
+  display: flex;
+  justify-content: center;
 }

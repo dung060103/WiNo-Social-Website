@@ -8,10 +8,8 @@
   height: 100%;
 }
 
-  @media screen and (max-width: 924px) {
-    .feed {
-      flex: 0.8 1;
-      
-    }
+@media screen and (max-width: 924px) {
+  .feed {
+    flex: 0.8 1;
+  }
 }
-  

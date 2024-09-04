@@ -1,76 +1,81 @@
 @import url(./varible.css);
-#root
-{
-    /* background-color: black; */
-    width: 100%;
-    height: max-content;
+
+#root {
+  /* background-color: black; */
+  width: 100%;
+  height: max-content;
 }
-#app
-{
-    min-height: 100vh;
-    height: max-content;
-    width: 100%;
+
+#app {
+  min-height: 100vh;
+  height: max-content;
+  width: 100%;
 }
+
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(var(--greenColorBegin_Background), var(--greenColorEnd_Background))
-}
-.content
-{
-    position: relative;
-    display: flex;
-    padding-top: 70px;
-    /* background: linear-gradient(var(--greenColorBegin_Background), var(--greenColorEnd_Background)); */
-    min-height: 100vh;
-}
-.container-popup_Content
-{
-    z-index: 2;
-    position: fixed;
-    right: 0;
-}
-.container-popup_Messenger
-{
-    position: fixed;
-    width: max-content;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    z-index: 1;
-    align-items: end;
-    min-width: 0px;
-    min-height: 500px;
-    padding-right: 60px;
-}
-.container-popup_Review
-{
-    background: var(--blackLayout);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
-}
-*::-webkit-scrollbar-thumb{
-    height: 5px;
-    width: 5px;
-    background: var(--greenColorHot);
-    border-radius: 10px;
-}
-*::-webkit-scrollbar{
-    height: 10px;
-    width: 10px;
-    background: var(--greenColorBegin_Background);
-    background-clip: padding-box;
-    border: 8px solid transparent;
-}
-*::selection{
-    background: var(--greenColorHot);
-    color: var(--greenColorBegin_Background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    var(--greenColorBegin_Background),
+    var(--greenColorEnd_Background)
+  );
 }
 
+.content {
+  position: relative;
+  display: flex;
+  padding-top: 70px;
+  /* background: linear-gradient(var(--greenColorBegin_Background), var(--greenColorEnd_Background)); */
+  min-height: 100vh;
+}
 
+.container-popup_Content {
+  z-index: 2;
+  position: fixed;
+  right: 0;
+}
+
+.container-popup_Messenger {
+  position: fixed;
+  width: max-content;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  z-index: 1;
+  align-items: end;
+  min-width: 0px;
+  min-height: 500px;
+  padding-right: 60px;
+}
+
+.container-popup_Review {
+  background: var(--blackLayout);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+*::-webkit-scrollbar-thumb {
+  height: 5px;
+  width: 5px;
+  background: var(--greenColorHot);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+  background: var(--greenColorBegin_Background);
+  background-clip: padding-box;
+  border: 8px solid transparent;
+}
+
+*::selection {
+  background: var(--greenColorHot);
+  color: var(--greenColorBegin_Background);
+}

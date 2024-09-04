@@ -1,40 +1,34 @@
-.container-popUpReviews
-{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-
+.container-popUpReviews {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .body-popUpReviews {
-    min-width: 400px;
-    min-height: 500px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 8px 2px var(--greenColorHot);
-    background: var(--greenColorEnd_Background);
-    width: max-content;
-    max-width: 400px;
+  min-width: 400px;
+  min-height: 500px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 8px 2px var(--greenColorHot);
+  background: var(--greenColorEnd_Background);
+  width: max-content;
+  max-width: 400px;
 }
-.header-popUpReviews
-{
-    margin-bottom: 10px;
+.header-popUpReviews {
+  margin-bottom: 10px;
 }
-.title-popUpReviews
-{
-    font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-    color: var(--blackColorTextDefault);
+.title-popUpReviews {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  color: var(--blackColorTextDefault);
 }
-.btnClose-popUpReviews
-{
-    position: absolute;
-    right: 0;
-    top: 0;
+.btnClose-popUpReviews {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
-.value-tabReactions
-{
-    display: flex;
-    flex-direction: column;
+.value-tabReactions {
+  display: flex;
+  flex-direction: column;
 }

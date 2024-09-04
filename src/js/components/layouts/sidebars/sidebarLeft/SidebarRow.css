@@ -1,41 +1,39 @@
 .sidebarRow {
-    display: flex;
-    align-items: center;
-    /* padding: 10px 0px; */
-    /* padding-right: 150px; */
-    cursor: pointer;
-    border-radius: 50px;
-  }
-  
-  .sidebarRow:hover {
-    border-radius: 50px;
-  }
-  
-  .sidebarRow > h4	 {
-    font-size: medium;
-    margin-left: 10px;
-    font-weight: 600;
-  }
-  
-  .sidebarRow > .MuiSvgIcon-root {
-    font-size: xx-large;
-    color: #4de739;
-  }
-  
-  .avatar{
-    border: 2px solid #4de739;
-    position: relative;
-    display: flex;
-    align-items: center;
-    
-    justify-content: center;
-    
- 
-    width: 35px;
-    height: 35px;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
-    
-    border-radius: 50%;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* padding: 10px 0px; */
+  /* padding-right: 150px; */
+  cursor: pointer;
+  border-radius: 50px;
+}
 
-  }
+.sidebarRow:hover {
+  border-radius: 50px;
+}
+
+.sidebarRow > h4 {
+  font-size: medium;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.sidebarRow > .MuiSvgIcon-root {
+  font-size: xx-large;
+  color: #4de739;
+}
+
+.avatar {
+  border: 2px solid #4de739;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+  border-radius: 50%;
+  overflow: hidden;
+}

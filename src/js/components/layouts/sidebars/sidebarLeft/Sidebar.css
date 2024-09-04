@@ -5,9 +5,8 @@
   margin-right: 10%;
 }
 
-
-  @media screen and (max-width: 924px) {
-    .sidebar {
-        display: none;
-    }
+@media screen and (max-width: 924px) {
+  .sidebar {
+    display: none;
+  }
 }

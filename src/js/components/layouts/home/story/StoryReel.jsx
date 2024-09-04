@@ -1,14 +1,18 @@
-import React from "react";
-import "./StoryReel.css";
-import Story from "./Story";
+import React from 'react'
+import './StoryReel.css'
+import Story from './Story'
 
-export default function StoryReel(props) {
+export default function StoryReel() {
   return (
     <div className="storyReel">
       <Story
-        profileSrc={"https://media.istockphoto.com/id/1279654034/photo/studio-microphone-and-pop-shield-on-mic-in-the-empty-recording-studio-with-copy-space.jpg?s=612x612&w=0&k=20&c=hoYDQnNkbwHr4fXKz1eRyxTAXwGZeNvBEKBLqpX-DLg="}
-        image={"https://img.pikbest.com/backgrounds/20190610/gif-creative-music-stage-lighting-dynamic-background_2829283.jpg!w700wp"}
-        title={"Singer"}
+        profileSrc={
+          'https://media.istockphoto.com/id/1279654034/photo/studio-microphone-and-pop-shield-on-mic-in-the-empty-recording-studio-with-copy-space.jpg?s=612x612&w=0&k=20&c=hoYDQnNkbwHr4fXKz1eRyxTAXwGZeNvBEKBLqpX-DLg='
+        }
+        image={
+          'https://img.pikbest.com/backgrounds/20190610/gif-creative-music-stage-lighting-dynamic-background_2829283.jpg!w700wp'
+        }
+        title={'Singer'}
       />
       <Story
         profileSrc="https://drive.google.com/uc?export=view&id=1ONQ1Mdw14u4gMRyHZSd37cbmfSH-UYlX"
@@ -31,5 +35,5 @@ export default function StoryReel(props) {
         title="Thanh Tùng"
       />
     </div>
-  );
+  )
 }

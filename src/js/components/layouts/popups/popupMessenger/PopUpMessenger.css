@@ -1,67 +1,57 @@
-.container-popupMessenger
-{
-    position: relative;
-    margin-right: 10px;
+.container-popupMessenger {
+  position: relative;
+  margin-right: 10px;
 }
-.body-popupMessenger
-{
-    display: flex;
-    flex-direction: column;
-    background: var(--greenColorEnd_Background);
-    border: 2px solid var(--greenColorHot);
-    border-radius: 8px;
-    max-width: 400px;
-    min-width: 400px;
+.body-popupMessenger {
+  display: flex;
+  flex-direction: column;
+  background: var(--greenColorEnd_Background);
+  border: 2px solid var(--greenColorHot);
+  border-radius: 8px;
+  max-width: 400px;
+  min-width: 400px;
 }
-.content-popupMessenger
-{
-    max-height: 350px;
-    padding: 5px 5px;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    min-height: 350px;
-    overflow-x: hidden;
+.content-popupMessenger {
+  max-height: 350px;
+  padding: 5px 5px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  min-height: 350px;
+  overflow-x: hidden;
 }
-.footer-popupMessenger
-{
-    padding: 5px 10px;
-    border-top: 2px solid var(--greenColorHot);
-    position: relative;
+.footer-popupMessenger {
+  padding: 5px 10px;
+  border-top: 2px solid var(--greenColorHot);
+  position: relative;
 }
-.content-formMessenger
-{
-    display: flex;
-    align-items: center;
+.content-formMessenger {
+  display: flex;
+  align-items: center;
 }
-.header-popupMessenger
-{
-    padding: 5px 10px;
-    border-bottom: 4px solid var(--greenColorHot);
+.header-popupMessenger {
+  padding: 5px 10px;
+  border-bottom: 4px solid var(--greenColorHot);
 }
-.container-showMoveDownMess
-{
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
+.container-showMoveDownMess {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.btnClose-replyMess
-{
-    position: absolute;
-    top: 0;
-    right: 0;
+.btnClose-replyMess {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.sessionMessage_interact
-{
-    position: absolute;
-    bottom: -8px;
-    background: var(--blackColorTextDefault);
-    border-radius: 4px;
-    padding: 2px 4px;
-    font-size: 14px;
-    color: var(--greenColorEnd_Background);
-    /* display: flex; */
-    width: max-content;
-    right: 0;
+.sessionMessage_interact {
+  position: absolute;
+  bottom: -8px;
+  background: var(--blackColorTextDefault);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 14px;
+  color: var(--greenColorEnd_Background);
+  /* display: flex; */
+  width: max-content;
+  right: 0;
 }
-

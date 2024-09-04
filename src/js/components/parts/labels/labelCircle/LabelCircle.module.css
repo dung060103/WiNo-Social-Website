@@ -1,106 +1,89 @@
-.body-labelCircle
-{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid var(--greenColorHot);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.body-labelCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--greenColorHot);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container-label {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
-.container-labelCircle
-{
-    position: relative;
-    padding: 5px;
+.container-labelCircle {
+  position: relative;
+  padding: 5px;
 }
-.img-label_withIcon, .img-label_withImg
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.img-label_withIcon,
+.img-label_withImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.container-labelCircle .img-label_withImg
-,.container-labelCircle .img-label_withIcon
-{
-    border-radius: 50%;
+.container-labelCircle .img-label_withImg,
+.container-labelCircle .img-label_withIcon {
+  border-radius: 50%;
 }
-.container-label_has{
-    position: absolute;
-    width: max-content;
-    height: max-content;
+.container-label_has {
+  position: absolute;
+  width: max-content;
+  height: max-content;
 }
-.container-label_hasCount
-{
-    top: 0;
-    right: 5px;
-    background: var(--greenColorHot);
-    color: white;
-    border-radius: 50%;
-    padding: 0 5px;
-
+.container-label_hasCount {
+  top: 0;
+  right: 5px;
+  background: var(--greenColorHot);
+  color: white;
+  border-radius: 50%;
+  padding: 0 5px;
 }
-.container-label_hasDetail
-{
-    
-    bottom: 5px;
-    right: 2px;
-    background: black;
-    color: white;
-    border-radius: 50%;
-
+.container-label_hasDetail {
+  bottom: 5px;
+  right: 2px;
+  background: black;
+  color: white;
+  border-radius: 50%;
 }
-.container-label_withIcon
-{
-    width: 100%;
-    height: 100%;
+.container-label_withIcon {
+  width: 100%;
+  height: 100%;
 }
-.img-label_withIcon
-{
-    color: var(--greenColorHot);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
+.img-label_withIcon {
+  color: var(--greenColorHot);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
 }
-.btn-show_Detail
-{
-    color: var(--greenColorHot);
+.btn-show_Detail {
+  color: var(--greenColorHot);
 }
-.btn-search__formSearch
-{
-    font-size: 20px;
+.btn-search__formSearch {
+  font-size: 20px;
 }
 .body-labelCircle.avatar {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
-.body-labelCircle.SMALL
-{
-    width: 50px;
-    height: 50px;
+.body-labelCircle.SMALL {
+  width: 50px;
+  height: 50px;
 }
-.body-labelCircle.SMALL .img-label_withIcon
-{
-    font-size: 20px !important;
+.body-labelCircle.SMALL .img-label_withIcon {
+  font-size: 20px !important;
 }
-.body-labelCircle.TINY
-{
-    width: 30px;
-    height: 30px;
+.body-labelCircle.TINY {
+  width: 30px;
+  height: 30px;
 }
-.body-labelCircle.LARGE
-{
-    width: 120px;
-    height: 120px;
+.body-labelCircle.LARGE {
+  width: 120px;
+  height: 120px;
 }
-.body-labelCircle.TINY .img-label_withIcon
-{
-    font-size: 20px !important;
+.body-labelCircle.TINY .img-label_withIcon {
+  font-size: 20px !important;
 }

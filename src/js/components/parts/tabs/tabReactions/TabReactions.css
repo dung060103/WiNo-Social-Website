@@ -1,23 +1,18 @@
-.body-tabReactions
-{
-    display: flex;
-    flex-direction: column;
+.body-tabReactions {
+  display: flex;
+  flex-direction: column;
 }
-.list-tabReactions
-{
-    display: flex;
+.list-tabReactions {
+  display: flex;
 }
-.item-tabReactions
-{
-    min-width: 50px;
-    text-align: center;
-    cursor: pointer;
+.item-tabReactions {
+  min-width: 50px;
+  text-align: center;
+  cursor: pointer;
 }
-.item-tabReactions:not(:first-child)
-{
-    margin-left: 10px;
+.item-tabReactions:not(:first-child) {
+  margin-left: 10px;
 }
-.item-tabReactions.active
-{
-    border-bottom: 1px solid var(--greenColorHot);
+.item-tabReactions.active {
+  border-bottom: 1px solid var(--greenColorHot);
 }

@@ -8,11 +8,9 @@
 
 // function MainPost(props) {
 //     return (
-  
 
 //             <Route exact path='/post/:id' element={DetailPost}/>
 
-    
 //     );
 // }
 

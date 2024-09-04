@@ -1,6 +1,6 @@
-import React from "react";
-import "./StoryReel.css";
-import Story from "./Story";
+import React from 'react'
+import './StoryReel.css'
+import Story from './Story'
 
 export default function StoryReel() {
   return (
@@ -31,5 +31,5 @@ export default function StoryReel() {
         title="Tùng Trương"
       />
     </div>
-  );
+  )
 }

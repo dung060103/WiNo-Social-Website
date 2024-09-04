@@ -1,5 +1,4 @@
-.text-shortInfo.link
-{
-    text-decoration: underline;
-    cursor: pointer;
+.text-shortInfo.link {
+  text-decoration: underline;
+  cursor: pointer;
 }

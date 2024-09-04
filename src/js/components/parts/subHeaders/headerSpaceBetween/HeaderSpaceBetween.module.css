@@ -1,11 +1,9 @@
-.body_headerSpaceBetween
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.body_headerSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-.bodyRight_headerSpaceBetween
-{
-    display: flex;
+.bodyRight_headerSpaceBetween {
+  display: flex;
 }

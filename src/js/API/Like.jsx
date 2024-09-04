@@ -1,36 +1,25 @@
-import { HOST_SERVER } from '../config';
-import axios from 'axios';
-
+import { createRequest } from '@utils/requests'
 
 const Like = {
+  postLike: async (query) => {
+    const path = '/like/'
+    return await createRequest('POST', path, { query })
+  },
 
-    post_like: async(query) => {
-        const url = `${HOST_SERVER}/like/${query}`
-        var data = await fetch(url, {method:'POST'}).then(res=>res.json());
-        return data ;
-    },
+  putUnlike: async (query) => {
+    const path = '/like/'
+    return await createRequest('PUT', path, { query })
+  },
 
-    put_unlike: (query) => {
-        const url = `${HOST_SERVER}/like/${query}`
-        var data =  axios.put(url,).then(function (res) {
-            console.log(res);
-        });
-        return data 
-    },
+  checkingLike: async (query) => {
+    const path = '/like/checking'
+    return await createRequest('GET', path, { query })
+  },
 
-    checking_like: async(query) => {
-        const url = `${HOST_SERVER}/like/checking${query}`
-        var data = await fetch(url, {method:'GET'}).then(res=>res.json());
-        return data 
-    },
-
-    count_like: async(query) => {
-        const url = `${HOST_SERVER}/like/${query}`
-        var data = await fetch(url, {method:'GET'}).then(res=>res.json());
-        return data 
-    },
-
-
+  countLike: async (query) => {
+    const path = '/like/'
+    return await createRequest('GET', path, { query })
+  },
 }
 
 export default Like

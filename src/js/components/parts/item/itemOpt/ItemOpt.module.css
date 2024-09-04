@@ -1,44 +1,36 @@
-.main-itemOpt
-{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    flex-direction: column;
+.main-itemOpt {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
 }
-.body-itemOpt
-{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+.body-itemOpt {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
-.childrenLeft-itemOpt
-{
-    display: flex;
-    margin-right: 10px;
-    align-items: center;
+.childrenLeft-itemOpt {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
 }
-.left-itemOpt
-{
-    display: flex;
+.left-itemOpt {
+  display: flex;
 }
-.summary-itemOpt
-{
-    
-    font-weight: bolder;
-    color: var(--greenColorHot);
+.summary-itemOpt {
+  font-weight: bolder;
+  color: var(--greenColorHot);
 }
-.childrenCenter-itemOpt
-{
-    color: var(--greenColorHot);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.childrenCenter-itemOpt {
+  color: var(--greenColorHot);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-.sub-itemOpt
-{
-    /* display: flex; */
+.sub-itemOpt {
+  /* display: flex; */
 }

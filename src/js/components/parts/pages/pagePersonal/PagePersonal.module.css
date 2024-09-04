@@ -1,25 +1,20 @@
-.container-pagePersonal
-{
-    width: 100%;
-    color: var(--blackColorTextDefault);
-    height: 100%;
-    flex: .85;
-    
+.container-pagePersonal {
+  width: 100%;
+  color: var(--blackColorTextDefault);
+  height: 100%;
+  flex: 0.85;
 }
 
-.image_personal_all{
-    width: 100%;
-
+.image_personal_all {
+  width: 100%;
 }
-.content-pagePersonal-post-img{
-    margin-top: 10px;
-    width: 400px;
-
+.content-pagePersonal-post-img {
+  margin-top: 10px;
+  width: 400px;
 }
 
-.content-pagePersonal{
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
+.content-pagePersonal {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
 }
-
