@@ -36,13 +36,13 @@ import styled from '@emotion/styled'
 import Picker from 'emoji-picker-react'
 import queryString from 'query-string'
 import { Link } from 'react-router-dom'
-import { storage } from '../../../config/firebase'
+import { storage } from '@config/firebase'
 import { format } from 'timeago.js'
-import { useStore } from '../../../store'
-import UsersHome from '../../../API/UsersHome'
-import Like from '../../../API/Like'
+import { useStore } from '@store'
+import UsersHome from '@api/UsersHome'
+import Like from '@api/Like'
 import PropTypes from 'prop-types'
-import { createRequest } from '../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 /* eslint-disable no-unused-vars */
 export default function Home({ avatar_account, full_name, data_account }) {

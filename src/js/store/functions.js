@@ -1,6 +1,6 @@
-import Users_Activity from '../API/UsersActivity'
-import Following from '../API/Following'
-import { createRequest } from '../utilities/requests'
+import Users_Activity from '@api/UsersActivity'
+import Following from '@api/Following'
+import { createRequest } from '@utils/requests'
 export function singleObj_constructor_toList(obj) {
   var init = []
   init.push(obj)

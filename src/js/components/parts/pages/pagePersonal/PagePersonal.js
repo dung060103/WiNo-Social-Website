@@ -6,11 +6,11 @@ import PagePersonalHeader from '../../subHeaders/pagePersonalHeader/PagePersonal
 import { createContext } from 'react'
 import { NoResult } from '../../inputs/forms/formSearch/FormSearch'
 
-import AccountAPI from '../../../../API/AccountAPI'
-import Users_Activity from '../../../../API/UsersActivity'
-import { useStore } from '../../../../store/'
+import AccountAPI from '@api/AccountAPI'
+import Users_Activity from '@api/UsersActivity'
+import { useStore } from '@store/'
 import PropTypes from 'prop-types'
-// import { createRequest } from '../../../../utilities/requests'
+// import { createRequest } from '@utils/requests'
 
 export const Context_PagePersonal = createContext()
 function PagePersonal({ slugs }) {

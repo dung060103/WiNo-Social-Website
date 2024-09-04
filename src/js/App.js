@@ -3,22 +3,22 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { Box, createTheme, ThemeProvider } from '@mui/material'
 import { useEffect, useState } from 'react'
 
-import Register from './components/parts/inputs/forms/formAccount/formRegisterForm.js'
-import RestorePass from './components/parts/inputs/forms/formAccount/formForgetPassword.js'
-import Login from './components/parts/inputs/forms/formAccount/formLogin.js'
+import Register from './components/parts/inputs/forms/formAccount/formRegisterForm'
+import RestorePass from './components/parts/inputs/forms/formAccount/formForgetPassword'
+import Login from './components/parts/inputs/forms/formAccount/formLogin'
 import CheckCodeEmail from './components/parts/inputs/forms/formAccount/formCheckCodeEmail'
 
 import PagePersonal from './components/parts/pages/pagePersonal/PagePersonal'
 import SubContentPersonal from './components/parts/subContents/subContentPersonal/SubContentPersonal'
 
 import Content from './components/layouts/content/Content'
-import Header from './components/layouts/header/Header.js'
+import Header from './components/layouts/header/Header'
 import SidebarLeft from './components/layouts/sidebars/sidebarLeft/Sidebar'
-import Widgets from './components/layouts/sidebars/sidebarRight/SidebarRight.jsx'
+import Widgets from './components/layouts/sidebars/sidebarRight/SidebarRight'
 
 import Home from './components/layouts/home/Home'
 import DetailPost from './components/layouts/home/postStatus/detailPost/DetailPost'
-import PagePersonalHeaderSetting from './components/parts/subHeaders/pagePersonalHeader/pagePersonalHeader_setting/PagePersonalHeaderSetting.jsx'
+import PagePersonalHeaderSetting from './components/parts/subHeaders/pagePersonalHeader/pagePersonalHeader_setting/PagePersonalHeaderSetting'
 
 import {
   add_friend_online,
@@ -27,17 +27,17 @@ import {
   delete_popup_call_video,
   set_data_account,
   set_url,
-} from './store/actions.js'
-import { useStore } from './store/hooks.js'
-import { get_slug } from './store/functions.js'
+} from '@store/actions'
+import { useStore } from '@store/hooks'
+import { get_slug } from '@store/functions'
 import PageFriend, {
   SidebarFriendList,
   SidebarFriendMenuDefault,
   SidebarFriendRequest,
   SidebarFriendResponse,
-} from './components/parts/pages/pageFriend/PageFriend.js'
-import { LIST_TAB_HEADER_PERSONAL_DEFAULT } from './store/constants.js'
-import PopUpCallVideo from './components/layouts/popups/popupCallVideo/PopUpCallVideo.js'
+} from './components/parts/pages/pageFriend/PageFriend'
+import { LIST_TAB_HEADER_PERSONAL_DEFAULT } from '@store/constants'
+import PopUpCallVideo from './components/layouts/popups/popupCallVideo/PopUpCallVideo'
 import PropTypes from 'prop-types'
 
 /* eslint-disable no-unused-vars */

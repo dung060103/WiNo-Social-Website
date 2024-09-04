@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import FormAccount from '../formAccount/FormAccount.module.scss'
-import LogoWebsite from '../../../../logo/logoWebsite/LogoWebsite'
-import { createRequest } from '../../../../../utilities/requests'
+import LogoWebsite from '@components/logo/logoWebsite/LogoWebsite'
+import { createRequest } from '@utils/requests'
 
 function Register() {
   const [fname, setfname] = useState('')

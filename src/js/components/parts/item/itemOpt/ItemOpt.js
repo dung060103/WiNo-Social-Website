@@ -1,4 +1,4 @@
-import { useStore } from '../../../../store/hooks'
+import { useStore } from '@store/hooks'
 import ItemOptStyles from '../itemOpt/ItemOpt.module.css'
 import PropTypes from 'prop-types'
 

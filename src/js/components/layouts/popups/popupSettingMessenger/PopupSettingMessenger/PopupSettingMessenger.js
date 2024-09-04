@@ -1,14 +1,14 @@
 import { Fragment, useContext, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useStore } from '../../../../../store'
+import { useStore } from '@store'
 import {
   add_popup_review,
   delete_popup_messenger,
   delete_popup_review,
   set_url,
-} from '../../../../../store/actions'
-import { SIZE_LARGE } from '../../../../../store/constants'
-import ButtonNormal from '../../../../parts/buttons/buttonNormal/ButtonNormal'
+} from '@store/actions'
+import { SIZE_LARGE } from '@store/constants'
+import ButtonNormal from '@components/parts/buttons/buttonNormal/ButtonNormal'
 import {
   Icon_AddPerson,
   Icon_Image,
@@ -18,12 +18,12 @@ import {
   Icon_Square,
   Icon_Square_Check,
   Icon_Trash,
-} from '../../../../parts/icons/fontAwesome/FontAwesome'
+} from '@components/parts/icons/fontAwesome/FontAwesome'
 import FormSearch, {
   NoResult,
-} from '../../../../parts/inputs/forms/formSearch/FormSearch'
-import ItemOpt from '../../../../parts/item/itemOpt/ItemOpt'
-import LabelCircle from '../../../../parts/labels/labelCircle/LabelCircle'
+} from '@components/parts/inputs/forms/formSearch/FormSearch'
+import ItemOpt from '@components/parts/item/itemOpt/ItemOpt'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
 import PopUp_ from '../../popup'
 import {
   contentPopUpMessenger,
@@ -39,7 +39,7 @@ import {
 import PopUpReviews from '../../popupReview/PopUpReviews'
 import './PopupSettingMessenger.css'
 import PropTypes from 'prop-types'
-import { createRequest } from '../../../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 /* eslint-disable no-unused-vars */
 function PopupSettingMessenger() {

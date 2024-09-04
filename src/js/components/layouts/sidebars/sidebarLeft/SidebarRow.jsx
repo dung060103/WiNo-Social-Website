@@ -2,8 +2,8 @@ import React from 'react'
 import './SidebarRow.css'
 import { Avatar } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom'
-import { useStore } from '../../../../store'
-import { set_url } from '../../../../store/actions'
+import { useStore } from '@store'
+import { set_url } from '@store/actions'
 import PropTypes from 'prop-types'
 
 export default function SidebarRow({

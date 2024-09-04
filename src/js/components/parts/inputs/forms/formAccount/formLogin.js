@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import FormAccount from '../formAccount/FormAccount.module.scss'
-import LogoWebsite from '../../../../logo/logoWebsite/LogoWebsite'
+// import FormAccount from '../formAccount/FormAccount.module.scss'
+import FormAccount from '@components/parts/inputs/forms/formAccount/FormAccount.module.scss'
+import LogoWebsite from '@components/logo/logoWebsite/LogoWebsite'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { createRequest } from '../../../../../utilities/requests'
-import { SITE_KEY_RECAPTCHA } from '../../../../../config'
+import { createRequest } from '@utils/requests'
+import { SITE_KEY_RECAPTCHA } from '@config'
 
 function Login() {
   const captchaRef = useRef(null)

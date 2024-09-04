@@ -1,6 +1,6 @@
-import { useStore } from '../../../store'
-import { Icon_Plus } from '../../parts/icons/fontAwesome/FontAwesome'
-import LabelCircle from '../../parts/labels/labelCircle/LabelCircle'
+import { useStore } from '@store'
+import { Icon_Plus } from '@components/parts/icons/fontAwesome/FontAwesome'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
 import PropTypes from 'prop-types'
 
 function Content({ bodyContent = '' }) {

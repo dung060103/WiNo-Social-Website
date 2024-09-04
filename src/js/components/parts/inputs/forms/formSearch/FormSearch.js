@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import FormSearchStyles from '../formSearch/FormSearch.module.css'
 import PropTypes from 'prop-types'
-import { Icon_Search } from '../../../icons/fontAwesome/FontAwesome'
+import { Icon_Search } from '@components/parts/icons/fontAwesome/FontAwesome'
 
 FormSearch.propTypes = {
   handler_Search: PropTypes.func,

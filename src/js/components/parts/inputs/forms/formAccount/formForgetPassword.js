@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import LogoWebsite from '../../../../logo/logoWebsite/LogoWebsite'
+import LogoWebsite from '@components/logo/logoWebsite/LogoWebsite'
 import FormAccount from '../formAccount/FormAccount.module.scss'
-import { createRequest } from '../../../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 function RestorePass() {
   const [email, setemail] = useState('')
   const [password, setPassword] = useState('')

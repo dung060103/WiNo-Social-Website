@@ -13,28 +13,28 @@ import './Message.css'
 import {
   Context_Message,
   interactMessage,
-} from '../../layouts/popups/popupMessenger/PopUpMessenger'
-import { useStore } from '../../../store'
-import { LIST_INTERACT_MESS_DEFAULT, SIZE_TINY } from '../../../store/constants'
+} from '@components/layouts/popups/popupMessenger/PopUpMessenger'
+import { useStore } from '@store'
+import { LIST_INTERACT_MESS_DEFAULT, SIZE_TINY } from '@store/constants'
 import {
   check_UnsentMessage,
   isMeSender,
   Render_notification_callVideo,
   shortLassSessionMess,
-} from '../../layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader'
-import PopUp_ from '../../layouts/popups/popup'
-import { bytesToSize, onlyUnique } from '../../../store/functions'
+} from '@components/layouts/popups/popupHeader/popupMessageHeader/PopupMessageHeader'
+import PopUp_ from '@components/layouts/popups/popup'
+import { bytesToSize, onlyUnique } from '@store/functions'
 import PickerEmoji from '../pickers/pickerEmoji/PickerEmoji'
-import { add_popup_call_video, add_popup_review } from '../../../store/actions'
-import PopUpReviews from '../../layouts/popups/popupReview/PopUpReviews'
+import { add_popup_call_video, add_popup_review } from '@store/actions'
+import PopUpReviews from '@components/layouts/popups/popupReview/PopUpReviews'
 import TabReactions, {
   OBJ_TabReactions,
 } from '../tabs/tabReactions/TabReactions'
 import ItemOpt from '../item/itemOpt/ItemOpt'
 import ButtonNormal from '../buttons/buttonNormal/ButtonNormal'
-import PopUpCallVideo from '../../layouts/popups/popupCallVideo/PopUpCallVideo'
+import PopUpCallVideo from '@components/layouts/popups/popupCallVideo/PopUpCallVideo'
 import PropTypes from 'prop-types'
-import { createRequest } from '../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 /* eslint-disable no-unused-vars */
 function Message({

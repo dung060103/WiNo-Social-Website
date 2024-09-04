@@ -1,26 +1,23 @@
 import '../popupMessenger/PopUpMessenger.css'
 
-import FormMessenger from '../../../parts/inputs/forms/formMessenger/FormMessenger'
-import LabelCircle from '../../../parts/labels/labelCircle/LabelCircle'
-import ItemOpt from '../../../parts/item/itemOpt/ItemOpt'
-import HeaderSpaceBetween from '../../../parts/subHeaders/headerSpaceBetween/HeaderSpaceBetween'
+import FormMessenger from '@components/parts/inputs/forms/formMessenger/FormMessenger'
+import LabelCircle from '@components/parts/labels/labelCircle/LabelCircle'
+import ItemOpt from '@components/parts/item/itemOpt/ItemOpt'
+import HeaderSpaceBetween from '@components/parts/subHeaders/headerSpaceBetween/HeaderSpaceBetween'
 import {
   Icon_Angle_Down,
   Icon_Arrow_Down,
   Icon_CallVideo,
   Icon_Close,
   Icon_Window_MiniSize,
-} from '../../../parts/icons/fontAwesome/FontAwesome'
-import Message from '../../../parts/messages/Message'
+} from '@components/parts/icons/fontAwesome/FontAwesome'
+import Message from '@components/parts/messages/Message'
 
 import { createContext, useRef, useState, useEffect } from 'react'
 import PopupSettingMessenger from '../popupSettingMessenger/PopupSettingMessenger/PopupSettingMessenger'
 import PopUp_ from '../popup'
-import { useStore } from '../../../../store'
-import {
-  add_popup_call_video,
-  delete_popup_messenger,
-} from '../../../../store/actions'
+import { useStore } from '@store'
+import { add_popup_call_video, delete_popup_messenger } from '@store/actions'
 import {
   isMeSender,
   shortLassSessionMess as Display_shortLassSessionMess,
@@ -29,7 +26,7 @@ import PopUpCallVideo from '../popupCallVideo/PopUpCallVideo'
 import Peer from 'peerjs'
 export const Context_Message = createContext()
 import PropTypes from 'prop-types'
-import { createRequest } from '../../../../utilities/requests'
+import { createRequest } from '@utils/requests'
 
 /* eslint-disable no-unused-vars */
 function PopUpMessenger({

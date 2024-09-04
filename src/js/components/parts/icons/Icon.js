@@ -1,6 +1,6 @@
 import './Icon.css'
 import clsx from 'clsx'
-import { SIZE_SMALL } from '../../../store/constants'
+import { SIZE_SMALL } from '@store/constants'
 import PropTypes from 'prop-types'
 
 function Icon_({ children, isHot = true, sizeIcon = SIZE_SMALL }) {
